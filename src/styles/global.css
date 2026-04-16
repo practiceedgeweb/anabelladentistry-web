@@ -1,20 +1,16 @@
 :root {
-  /* Anabella "Modern Boutique" Palette */
-  --color-gold: #D4AF37;
-  --color-gold-hover: #b8912e;
-  --color-bg-warm: #FCF9F5;
-  --color-text-main: #333333;
-  --color-text-muted: #666666;
+  /* Anabella Exact Palette */
+  --color-gold: #C5A059;
+  --color-gold-hover: #b08e4a;
+  --color-bg-warm: #f9f7f2;
+  --color-text-main: #2b2b2b;
+  --color-text-muted: #555555;
   --color-white: #ffffff;
-  --color-border: #E6E1DC;
+  --color-border: #eceae4;
 
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  
-  /* Spacing */
-  --container-width: 1200px;
-  --space-unit: 1rem;
 }
 
 * {
