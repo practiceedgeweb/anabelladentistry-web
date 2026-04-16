@@ -3,10 +3,10 @@
   --color-gold: #C5A059;
   --color-gold-hover: #b08e4a;
   
-  --color-header-bg: #333333;
-  --color-topbar-bg: #808080;
-  --color-nav-link: #ededed;
-  --color-nav-hover: #72b7bc;
+  --color-header-bg: #67a671; /* Real Sage Green */
+  --color-topbar-bg: #5a8e63; /* Slightly darker sage for topbar */
+  --color-nav-link: #ffffff;
+  --color-nav-hover: #eceae4;
   
   --color-bg-warm: #fcfdfe;
   --color-text-main: #424242;
