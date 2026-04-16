@@ -1,10 +1,16 @@
 :root {
-  /* Anabella Exact Palette */
+  /* Anabella Exact Technical Palette */
   --color-gold: #C5A059;
   --color-gold-hover: #b08e4a;
-  --color-bg-warm: #f9f7f2;
-  --color-text-main: #2b2b2b;
-  --color-text-muted: #555555;
+  
+  --color-header-bg: #333333;
+  --color-topbar-bg: #808080;
+  --color-nav-link: #ededed;
+  --color-nav-hover: #72b7bc;
+  
+  --color-bg-warm: #fcfdfe;
+  --color-text-main: #424242;
+  --color-text-muted: #666666;
   --color-white: #ffffff;
   --color-border: #eceae4;
 
