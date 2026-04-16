@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+---
+
+<Layout title="Anabella Dentistry | Bellevue's Modern Boutique Dentist">
+	<main>
+		<Header />
+		<Hero />
+		<Services />
+		
+		<section class="cta-bottom section">
+			<div class="container text-center">
+				<h2>Ready for a better dental experience?</h2>
+				<p>We are currently accepting new patients in Bellevue.</p>
+				<a href="#" class="btn-gold">Schedule Your Consultation</a>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.text-center {
+		text-align: center;
+	}
+	.cta-bottom {
+		background-color: var(--color-bg-warm);
+		padding: 5rem 0;
+	}
+	.cta-bottom h2 {
+		margin-bottom: 1rem;
+	}
+	.cta-bottom p {
+		margin-bottom: 2rem;
+		font-size: 1.25rem;
+	}
+</style>
