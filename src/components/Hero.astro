@@ -15,38 +15,43 @@
 
 <style>
   .hero {
-    height: 85vh;
+    height: 90vh;
     background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.05)), url('http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/smiling-woman-2000x1100.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
     color: white;
+    margin-top: -1px;
   }
   .hero-inner {
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
   .hero-content {
-    max-width: 800px;
+    max-width: 700px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 4rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
   }
   h1 {
-    font-size: 5rem;
-    margin-bottom: 1.5rem;
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
     color: white;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
   p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: white;
-    margin-bottom: 3rem;
-    font-weight: 500;
+    margin-bottom: 2.5rem;
   }
   .hero-actions {
     display: flex;
-    gap: 1.5rem;
-    justify-content: center;
+    gap: 1rem;
+    justify-content: flex-start;
   }
   .btn-outline {
     display: inline-block;

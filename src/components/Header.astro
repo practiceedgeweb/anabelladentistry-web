@@ -1,66 +1,212 @@
 ---
 ---
 <header class="header">
-  <div class="container header-inner">
-    <div class="logo">
-      <img src="https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-AnaBella-Family-and-Cosmetic-Dentistry-Header-Logo.webp" alt="AnaBella Family & Cosmetic Dentistry" />
-    </div>
-    <nav class="nav">
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="#about">About</a>
-        <a href="#patients">Patients</a>
-        <a href="#sleep-apnea">Sleep Apnea</a>
-        <a href="#tmj">TMJ</a>
-        <a href="#services">Services</a>
-        <a href="#review">Review Us</a>
+  <div class="header-top">
+    <div class="container top-inner">
+      <span>(425) 453-9999</span>
+      <div class="top-actions">
+        <a href="/special/" class="top-btn">New Patient Special</a>
       </div>
-      <a href="#contact" class="btn-gold">Contact</a>
-    </nav>
+    </div>
+  </div>
+  <div class="header-main">
+    <div class="container main-inner">
+      <a href="/" class="logo">
+        <img src="https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-AnaBella-Family-and-Cosmetic-Dentistry-Header-Logo.webp" alt="AnaBella Family & Cosmetic Dentistry" />
+      </a>
+      
+      <nav class="nav">
+        <ul class="menu">
+          <li><a href="/">Home</a></li>
+          <li class="has-submenu">
+            <a href="#about">About</a>
+            <ul class="submenu">
+              <li><a href="/about/meet-the-team/">Meet the Team</a></li>
+              <li><a href="/about/testimonials/">Testimonials</a></li>
+              <li><a href="/about/office-tour/">Office Tour</a></li>
+              <li><a href="/about/smile-gallery/">Smile Gallery</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu">
+            <a href="#patients">Patients</a>
+            <ul class="submenu">
+              <li><a href="/patient-info/schedule-appointment/">Schedule Appointment</a></li>
+              <li><a href="/patient-info/insurance/">Insurance</a></li>
+              <li><a href="/patient-info/">Patient Information</a></li>
+              <li class="has-inner-submenu">
+                <a href="#">FAQs & Information</a>
+                <ul class="inner-submenu">
+                  <li><a href="/implant-benefits/">Implant Benefits</a></li>
+                  <li><a href="/dentures-care/">Dentures Care</a></li>
+                  <li><a href="/brushing-guide/">How to Brush</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="/sleep-apnea/">Sleep Apnea</a></li>
+          <li><a href="/tmj/">TMJ</a></li>
+          <li class="has-submenu">
+            <a href="#services">Services</a>
+            <ul class="submenu mega">
+              <div class="mega-grid">
+                <div class="mega-col">
+                  <strong>General</strong>
+                  <li><a href="/general/checkups/">Cleanings & Exams</a></li>
+                  <li><a href="/general/cavity/">Cavity Treatment</a></li>
+                </div>
+                <div class="mega-col">
+                  <strong>Cosmetic</strong>
+                  <li><a href="/cosmetic/veneers/">Veneers</a></li>
+                  <li><a href="/cosmetic/whitening/">Teeth Whitening</a></li>
+                </div>
+                <div class="mega-col">
+                  <strong>Restorative</strong>
+                  <li><a href="/restorative/implants/">Implants</a></li>
+                  <li><a href="/restorative/crowns/">Dental Crowns</a></li>
+                </div>
+              </div>
+            </ul>
+          </li>
+          <li><a href="/review-us/">Review Us</a></li>
+          <li><a href="/contact/" class="btn-gold-small">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
 
 <style>
   .header {
-    padding: 1rem 0;
+    width: 100%;
     position: sticky;
     top: 0;
+    z-index: 1000;
     background: white;
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    z-index: 1000;
   }
-  .header-inner {
+
+  /* Header Top Bar */
+  .header-top {
+    background: #f9f7f2;
+    padding: 0.5rem 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .top-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .top-btn {
+    background: var(--color-gold);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  /* Main Header */
+  .header-main {
+    padding: 1rem 0;
+  }
+  .main-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .logo img {
-    height: 60px;
+    height: 70px;
     width: auto;
   }
-  .nav {
+
+  /* Navigation & Menus */
+  .menu {
     display: flex;
+    list-style: none;
+    gap: 1.25rem;
     align-items: center;
-    gap: 2rem;
   }
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-  .nav-links a {
+  .menu > li > a {
     text-decoration: none;
     color: var(--color-text-main);
     font-weight: 700;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    padding: 1rem 0;
     transition: color 0.2s ease;
   }
-  .nav-links a:hover {
+  .menu li:hover > a {
     color: var(--color-gold);
   }
-  
+
+  /* Dropdowns */
+  .has-submenu {
+    position: relative;
+  }
+  .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    width: 220px;
+    list-style: none;
+    padding: 1rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-top: 3px solid var(--color-gold);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+  }
+  .has-submenu:hover > .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .submenu li a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    color: var(--color-text-main);
+    font-size: 0.8125rem;
+    font-weight: 500;
+  }
+  .submenu li a:hover {
+    background: #f9f7f2;
+    color: var(--color-gold);
+  }
+
+  /* Mega Menu for Services */
+  .mega {
+    width: 600px;
+    left: -200px;
+  }
+  .mega-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem 2rem;
+  }
+  .mega-col strong {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .btn-gold-small {
+    background: var(--color-gold);
+    color: white !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
   @media (max-width: 1100px) {
-    .nav-links { display: none; }
+    .menu { display: none; }
   }
 </style>
