@@ -5,6 +5,8 @@
     <div class="container top-inner">
       <span>(425) 454-3221</span>
       <div class="top-actions">
+        <a href="/accessibility/">Accessibility</a>
+        <a href="/hipaa-privacy-policy/">Hipaa Policy</a>
         <a href="/special/" class="top-btn">New Patient Special</a>
       </div>
     </div>
@@ -33,39 +35,32 @@
               <li><a href="/patient-info/schedule-appointment/">Schedule Appointment</a></li>
               <li><a href="/patient-info/insurance/">Insurance</a></li>
               <li><a href="/patient-info/">Patient Information</a></li>
-              <li class="has-inner-submenu">
-                <a href="#">FAQs & Information</a>
-                <ul class="inner-submenu">
-                  <li><a href="/implant-benefits/">Implant Benefits</a></li>
-                  <li><a href="/dentures-care/">Dentures Care</a></li>
-                  <li><a href="/brushing-guide/">How to Brush</a></li>
-                </ul>
-              </li>
+              <li><a href="/brushing-guide/">FAQs & Information</a></li>
             </ul>
           </li>
           <li><a href="/sleep-apnea/">Sleep Apnea</a></li>
           <li><a href="/tmj/">TMJ</a></li>
           <li class="has-submenu">
             <a href="#services">Services</a>
-            <ul class="submenu mega">
+            <div class="submenu mega">
               <div class="mega-grid">
                 <div class="mega-col">
                   <strong>General</strong>
-                  <li><a href="/general/checkups/">Cleanings & Exams</a></li>
-                  <li><a href="/general/cavity/">Cavity Treatment</a></li>
+                  <a href="/general/checkups/">Cleanings & Exams</a>
+                  <a href="/general/cavity/">Cavity Treatment</a>
                 </div>
                 <div class="mega-col">
                   <strong>Cosmetic</strong>
-                  <li><a href="/cosmetic/veneers/">Veneers</a></li>
-                  <li><a href="/cosmetic/whitening/">Teeth Whitening</a></li>
+                  <a href="/cosmetic/veneers/">Veneers</a>
+                  <a href="/cosmetic/whitening/">Teeth Whitening</a>
                 </div>
                 <div class="mega-col">
                   <strong>Restorative</strong>
-                  <li><a href="/restorative/implants/">Implants</a></li>
-                  <li><a href="/restorative/crowns/">Dental Crowns</a></li>
+                  <a href="/restorative/implants/">Implants</a>
+                  <a href="/restorative/crowns/">Dental Crowns</a>
                 </div>
               </div>
-            </ul>
+            </div>
           </li>
           <li><a href="/review-us/">Review Us</a></li>
           <li><a href="/contact/" class="btn-gold-small">Contact</a></li>
@@ -81,13 +76,11 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: var(--color-header-bg);
-    box-shadow: 0 2px 15px rgba(0,0,0,0.2);
   }
 
-  /* Header Top Bar */
+  /* Header Top Bar - Matching Australian Top Bar Color */
   .header-top {
-    background: var(--color-topbar-bg);
+    background: #808080;
     padding: 0.5rem 0;
     font-size: 0.75rem;
     font-weight: 700;
@@ -99,18 +92,25 @@
     justify-content: space-between;
     align-items: center;
   }
+  .top-actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .top-actions a {
+    color: white;
+    text-decoration: none;
+  }
   .top-btn {
     background: var(--color-gold);
-    color: white;
     padding: 4px 12px;
     border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.7rem;
   }
 
-  /* Main Header */
+  /* Main Header - Matching Freedom Linear Gradient */
   .header-main {
     padding: 0.75rem 0;
+    background-image: linear-gradient(to right, var(--color-header-start), var(--color-header-mid), var(--color-header-end));
   }
   .main-inner {
     display: flex;
@@ -120,28 +120,27 @@
   .logo img {
     height: 65px;
     width: auto;
-    filter: brightness(0) invert(1); /* Makes the logo white for the dark header */
   }
 
   /* Navigation & Menus */
   .menu {
     display: flex;
     list-style: none;
-    gap: 1rem;
+    gap: 1.25rem;
     align-items: center;
   }
   .menu > li > a {
     text-decoration: none;
-    color: var(--color-nav-link);
+    color: white;
     font-weight: 700;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    padding: 1.5rem 0.5rem;
-    transition: color 0.2s ease;
+    padding: 1.5rem 0;
+    transition: opacity 0.2s ease;
   }
   .menu li:hover > a {
-    color: var(--color-nav-hover);
+    opacity: 0.8;
   }
 
   /* Dropdowns */
@@ -168,19 +167,56 @@
     visibility: visible;
     transform: translateY(0);
   }
-  .submenu li a {
+  .submenu li a, .mega-col a {
     display: block;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
-    color: var(--color-text-main);
+    color: var(--color-text-main) !important;
     font-size: 0.8125rem;
     font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
   }
-  .submenu li a:hover {
+  .submenu li a:hover, .mega-col a:hover {
     background: #f9f7f2;
-    color: var(--color-gold);
+    color: var(--color-gold) !important;
   }
-  
+
+  /* Mega Menu for Services */
+  .mega {
+    width: 600px !important;
+    left: -200px !important;
+  }
+  .mega-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem 2rem;
+  }
+  .mega-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .mega-col strong {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+    padding: 0 1.5rem;
+  }
+  .mega-col a {
+    padding: 0.5rem 1.5rem !important;
+  }
+
+  .btn-gold-small {
+    background: var(--color-gold);
+    color: white !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
   @media (max-width: 900px) {
     .nav { display: none; }
   }

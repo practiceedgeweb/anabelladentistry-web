@@ -1,22 +1,23 @@
 :root {
   /* Anabella Exact Technical Palette */
   --color-gold: #C5A059;
-  --color-gold-hover: #b08e4a;
   
-  --color-header-bg: #67a671; /* Real Sage Green */
-  --color-topbar-bg: #5a8e63; /* Slightly darker sage for topbar */
-  --color-nav-link: #ffffff;
-  --color-nav-hover: #eceae4;
+  /* The "Sage/Blue-Grey" Gradient from their CSS */
+  --color-header-start: #aebcd1;
+  --color-header-mid: #536d92;
+  --color-header-end: #aebcd1;
   
-  --color-bg-warm: #fcfdfe;
-  --color-text-main: #424242;
+  --color-text-main: #333333;
   --color-text-muted: #666666;
   --color-white: #ffffff;
   --color-border: #eceae4;
 
-  /* Typography */
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  /* Exact Typography Found */
+  --font-heading: 'Raleway', sans-serif;
+  --font-body: 'Lato', sans-serif;
+  
+  /* Spacing */
+  --container-width: 1200px;
 }
 
 * {
@@ -26,7 +27,7 @@
 }
 
 html {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-text-main);
@@ -35,8 +36,8 @@ html {
 }
 
 h1, h2, h3 {
-  font-family: var(--font-serif);
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-weight: 600;
   line-height: 1.2;
   color: var(--color-text-main);
 }
@@ -61,5 +62,5 @@ h1, h2, h3 {
 }
 
 .btn-gold:hover {
-  background-color: var(--color-gold-hover);
+  background-color: #b08e4a;
 }
