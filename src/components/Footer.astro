@@ -14,7 +14,7 @@ import site from '../data/site.json';
     <div class="col">
       <strong>Policies</strong>
       <ul>
-        {site.footerLinks.map((l) => (
+        {site.footer.links.map((l) => (
           <li><a href={l.href}>{l.text}</a></li>
         ))}
       </ul>
