@@ -1,121 +1,68 @@
 {
   "origin": "https://www.anabelladentistry.com",
+  "businessName": "AnaBella Family and Cosmetic Dentistry",
   "zocDocUrl": "https://www.zocdoc.com/practice/anabella-family-and-cosmetic-dentistry-12212?lock=true&isNewPatient=false&referrerType=widget",
   "nav": [
+    { "text": "Home", "href": "/", "children": [] },
     {
-      "text": "Home",
-      "href": "/",
-      "children": []
+      "text": "About",
+      "href": "/us/",
+      "children": [
+        { "text": "Meet The Team", "href": "/us/" },
+        { "text": "Testimonials", "href": "/testimonials/" },
+        { "text": "Office Tour", "href": "/office-tour/" },
+        { "text": "Smile Gallery", "href": "/smile-gallery/" }
+      ]
     },
+    { "text": "Patients", "href": "/patient-information/", "children": [] },
+    { "text": "Sleep Apnea", "href": "/sleep-apnea/", "children": [] },
+    { "text": "TMJ", "href": "/tmj-treatment/", "children": [] },
     {
-      "text": "Sleep Apnea",
-      "href": "/sleep-apnea/",
-      "children": []
+      "text": "Services",
+      "href": "/general-dentistry-services/",
+      "children": [
+        { "text": "Dental Exams", "href": "/dental-exams/" },
+        { "text": "Dental Cleanings", "href": "/dental-cleanings/" },
+        { "text": "Dental Fillings", "href": "/dental-fillings/" },
+        { "text": "Dental Crowns", "href": "/dental-crowns/" },
+        { "text": "Dental Bridges", "href": "/dental-bridges/" },
+        { "text": "Dental Implants", "href": "/dental-implants/" },
+        { "text": "Veneers", "href": "/veneers/" },
+        { "text": "Teeth Whitening", "href": "/teeth-whitening/" },
+        { "text": "Clear Aligners", "href": "/clear-aligners/" },
+        { "text": "Invisalign", "href": "/invisalign/" },
+        { "text": "Root Canal Therapy", "href": "/root-canal-therapy/" },
+        { "text": "Tooth Extractions", "href": "/tooth-extractions/" },
+        { "text": "Dentures", "href": "/dentures/" },
+        { "text": "Gum Disease Treatment", "href": "/gum-disease-treatment/" },
+        { "text": "Mouth Guards", "href": "/mouth-guards/" }
+      ]
     },
-    {
-      "text": "TMJ",
-      "href": "/tmj-treatment/",
-      "children": []
-    },
-    {
-      "text": "Review Us",
-      "href": "/review-us/",
-      "children": []
-    },
-    {
-      "text": "Contact",
-      "href": "/contact-us/",
-      "children": []
-    },
-    {
-      "text": "Accessibility",
-      "href": "/accessibility/",
-      "children": []
-    },
-    {
-      "text": "Anti-Discrimination",
-      "href": "/anti-discrimination/",
-      "children": []
-    },
-    {
-      "text": "Healthcare Disclaimer",
-      "href": "/healthcare-disclaimer/",
-      "children": []
-    },
-    {
-      "text": "Hipaa Policy",
-      "href": "/hipaa-privacy-policy/",
-      "children": []
-    },
-    {
-      "text": "Privacy Policy",
-      "href": "/privacy-policy/",
-      "children": []
-    },
-    {
-      "text": "Terms of Service",
-      "href": "/terms-service/",
-      "children": []
-    },
-    {
-      "text": "Good Faith Estimate",
-      "href": "/good-faith-estimate/",
-      "children": []
-    },
-    {
-      "text": "AI Generated Content Disclaimer",
-      "href": "/ai-generated-content-disclaimer/",
-      "children": []
-    }
+    { "text": "Review Us", "href": "/review-us/", "children": [] },
+    { "text": "Contact", "href": "/contact-us/", "children": [] }
   ],
   "footer": {
     "links": [
-      {
-        "href": "/special",
-        "text": "request an appointment"
-      },
-      {
-        "href": "tel:4254543221",
-        "text": "(425) 454-3221"
-      },
-      {
-        "href": "/accessibility/",
-        "text": "Accessibility"
-      },
-      {
-        "href": "/anti-discrimination/",
-        "text": "Anti-Discrimination"
-      },
-      {
-        "href": "/healthcare-disclaimer/",
-        "text": "Healthcare Disclaimer"
-      },
-      {
-        "href": "/hipaa-privacy-policy/",
-        "text": "Hipaa Policy"
-      },
-      {
-        "href": "/privacy-policy/",
-        "text": "Privacy Policy"
-      },
-      {
-        "href": "/terms-service/",
-        "text": "Terms of Service"
-      },
-      {
-        "href": "/good-faith-estimate/",
-        "text": "Good Faith Estimate"
-      },
-      {
-        "href": "/ai-generated-content-disclaimer/",
-        "text": "AI Generated Content Disclaimer"
-      }
+      { "href": "/accessibility/", "text": "Accessibility" },
+      { "href": "/anti-discrimination/", "text": "Anti-Discrimination" },
+      { "href": "/healthcare-disclaimer/", "text": "Healthcare Disclaimer" },
+      { "href": "/hipaa-privacy-policy/", "text": "HIPAA Policy" },
+      { "href": "/privacy-policy/", "text": "Privacy Policy" },
+      { "href": "/terms-service/", "text": "Terms of Service" },
+      { "href": "/good-faith-estimate/", "text": "Good Faith Estimate" },
+      { "href": "/ai-generated-content-disclaimer/", "text": "AI Content Disclaimer" }
     ],
     "copyright": "COPYRIGHT © 2026"
   },
   "contact": {
-    "phone": "4254543221",
-    "address": "11216 NE 15th St Suite A | Bellevue WA 98004"
+    "phone": "(425) 454-3221",
+    "phoneTel": "4254543221",
+    "address": {
+      "street": "11216 NE 15th St Suite A",
+      "city": "Bellevue",
+      "state": "WA",
+      "zip": "98004"
+    }
   },
   "hours": {
     "Monday": "9:00am - 5:00pm",
@@ -123,32 +70,21 @@
     "Wednesday": "9:00am - 5:00pm",
     "Thursday": "7:00am - 3:30pm",
     "Friday": "Closed",
+    "Saturday": "Closed",
     "Sunday": "Closed"
   },
   "testimonials": [
     {
-      "quote": "\"Easy to make appointment. Professional doctor and friendly staff. Highly recommend this clinic.\"",
-      "author": ""
+      "quote": "Easy to make appointment. Professional doctor and friendly staff. Highly recommend this clinic.",
+      "author": "Nut L."
     },
     {
-      "quote": "Nut L.",
-      "author": ""
+      "quote": "I actually like going to my dentist. Highly recommend this place.",
+      "author": "Ali J."
     },
     {
-      "quote": "\"I actually like going to my dentist. Highly recommend this place.\"",
-      "author": ""
-    },
-    {
-      "quote": "Ali J.",
-      "author": ""
-    },
-    {
-      "quote": "\"Professional doctor. Very lovely and relaxing atmosphere.\"",
-      "author": ""
-    },
-    {
-      "quote": "B Picha S.",
-      "author": ""
+      "quote": "Professional doctor. Very lovely and relaxing atmosphere.",
+      "author": "B Picha S."
     }
   ]
 }

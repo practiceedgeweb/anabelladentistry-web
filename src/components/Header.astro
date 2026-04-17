@@ -1,47 +1,49 @@
 ---
 import site from '../data/site.json';
+const { contact, nav, zocDocUrl } = site;
 ---
 <header class="site-header">
-  <div class="top-bar">
+  <div class="header-top">
     <div class="container top-inner">
-      <a href={`tel:${site.contact.phoneTel}`} class="phone">{site.contact.phone}</a>
-      <div class="top-actions">
-        <a href="/accessibility/">Accessibility</a>
-        <a href="/hipaa-privacy-policy/">HIPAA Policy</a>
-        <a href="/special/" class="top-btn">New Patient Special</a>
-      </div>
-    </div>
-  </div>
-  <div class="header-main">
-    <div class="container main-inner">
       <a href="/" class="logo" aria-label="AnaBella Family and Cosmetic Dentistry home">
         <img
           src="/assets/2025/10/Dentist-Bellevue-WA-AnaBella-Family-and-Cosmetic-Dentistry-Header-Logo.webp"
           onerror="this.onerror=null;this.src='https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-AnaBella-Family-and-Cosmetic-Dentistry-Header-Logo.webp';"
           alt="AnaBella Family and Cosmetic Dentistry"
-          width="250"
-          height="130"
+          width="220"
+          height="115"
         />
       </a>
-      <nav class="nav" aria-label="Primary">
-        <ul class="menu">
-          {site.nav.map((item) => (
-            <li class={item.children ? 'has-submenu' : ''}>
-              <a href={item.href}>{item.text}</a>
-              {item.children && (
-                <ul class="submenu">
-                  {item.children.map((child) => (
-                    <li><a href={child.href}>{child.text}</a></li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <button class="menu-toggle" aria-label="Open menu">☰</button>
+      <div class="top-contact">
+        <p class="top-address">{contact.address.street} | {contact.address.city} {contact.address.state} {contact.address.zip}</p>
+        <a href={`tel:${contact.phoneTel}`} class="top-phone">{contact.phone}</a>
+      </div>
+      <a href={zocDocUrl} class="btn-schedule" target="_blank" rel="noopener noreferrer">Schedule Online</a>
     </div>
   </div>
+
+  <nav class="header-nav" aria-label="Primary">
+    <div class="container nav-inner">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true" />
+      <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </label>
+      <ul class="menu">
+        {nav.map((item) => (
+          <li class={item.children && item.children.length > 0 ? 'has-drop' : ''}>
+            <a href={item.href}>{item.text}</a>
+            {item.children && item.children.length > 0 && (
+              <ul class="dropdown">
+                {item.children.map((child) => (
+                  <li><a href={child.href}>{child.text}</a></li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </nav>
 </header>
 
 <style>
@@ -50,97 +52,152 @@ import site from '../data/site.json';
     position: sticky;
     top: 0;
     z-index: 100;
-    background: #fff;
+    background: var(--color-accent);
   }
 
-  .top-bar {
-    background: var(--color-header-bg);
-    color: var(--color-header-text);
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.5rem 0;
-  }
+  /* ── Top row: logo | contact | schedule ── */
+  .header-top { border-bottom: 1px solid rgba(0,0,0,0.08); }
   .top-inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 0.75rem 0;
   }
-  .phone { color: var(--color-header-text); letter-spacing: 0.04em; }
-  .top-actions { display: flex; gap: 1.25rem; align-items: center; }
-  .top-actions a { color: var(--color-header-text); text-decoration: none; }
-  .top-actions a:hover { color: var(--color-accent-hover); }
-  .top-btn {
-    background: var(--color-accent-hover);
-    color: #fff !important;
-    padding: 4px 12px;
-    border-radius: 4px;
-  }
+  .logo img { height: 70px; width: auto; display: block; }
 
-  .header-main { padding: 1rem 0; border-bottom: 1px solid var(--color-border); }
-  .main-inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
-  .logo img { height: 65px; width: auto; display: block; }
+  .top-contact { text-align: center; }
+  .top-address {
+    font-size: 0.82rem;
+    color: var(--color-text-main);
+    margin-bottom: 0.25rem;
+  }
+  .top-phone {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    letter-spacing: 0.02em;
+  }
+  .top-phone:hover { color: var(--color-accent-hover); }
+
+  .btn-schedule {
+    background: var(--color-accent-hover);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.7rem 1.4rem;
+    border: 2px solid var(--color-accent-hover);
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-schedule:hover { background: transparent; color: var(--color-accent-hover); }
+
+  /* ── Nav row ── */
+  .header-nav { background: var(--color-accent); }
+  .nav-inner { display: flex; align-items: center; }
 
   .menu {
     display: flex;
     list-style: none;
-    gap: 1.25rem;
-    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 0;
   }
   .menu > li > a {
-    font-weight: 700;
-    font-size: 0.78rem;
+    display: block;
+    padding: 0.85rem 1.1rem;
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.06em;
     color: var(--color-text-main);
-    padding: 1rem 0;
-    transition: color 0.2s ease;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
   }
-  .menu > li > a:hover { color: var(--color-accent-hover); }
+  .menu > li:hover > a,
+  .menu > li > a:hover {
+    background: rgba(0,0,0,0.08);
+    color: var(--color-accent-hover);
+  }
 
-  .has-submenu { position: relative; }
-  .submenu {
+  /* ── Dropdown ── */
+  .has-drop { position: relative; }
+  .dropdown {
     position: absolute;
     top: 100%;
     left: 0;
-    background: #fff;
-    min-width: 220px;
+    background: var(--color-accent);
+    min-width: 200px;
     list-style: none;
-    padding: 0.5rem 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-    border-top: 3px solid var(--color-accent-hover);
+    padding: 0.4rem 0;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    border-top: 2px solid var(--color-accent-hover);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(6px);
-    transition: all 0.2s ease;
+    transform: translateY(4px);
+    transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
   }
-  .has-submenu:hover > .submenu,
-  .has-submenu:focus-within > .submenu {
+  .has-drop:hover > .dropdown,
+  .has-drop:focus-within > .dropdown {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
   }
-  .submenu li a {
+  .dropdown li a {
     display: block;
-    padding: 0.6rem 1.25rem;
-    font-size: 0.85rem;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.82rem;
     font-weight: 600;
     color: var(--color-text-main);
+    white-space: nowrap;
   }
-  .submenu li a:hover {
-    background: var(--color-bg-warm);
-    color: var(--color-accent-hover);
-  }
+  .dropdown li a:hover { background: rgba(0,0,0,0.08); color: var(--color-accent-hover); }
 
-  .menu-toggle {
+  /* ── Mobile hamburger ── */
+  .nav-toggle-input { display: none; }
+  .hamburger {
     display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
+    flex-direction: column;
+    gap: 5px;
     cursor: pointer;
+    padding: 0.5rem;
+    margin-left: auto;
   }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text-main);
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .nav-toggle-input:checked + .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle-input:checked + .hamburger span:nth-child(2) { opacity: 0; }
+  .nav-toggle-input:checked + .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
   @media (max-width: 900px) {
-    .nav { display: none; }
-    .menu-toggle { display: inline-block; }
+    .top-inner { flex-wrap: wrap; }
+    .hamburger { display: flex; }
+    .menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: var(--color-accent);
+    }
+    .nav-toggle-input:checked + .hamburger + .menu { display: flex; }
+    .dropdown {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      border-top: none;
+      padding-left: 1rem;
+    }
+    .has-drop:hover > .dropdown { display: block; }
   }
 </style>
