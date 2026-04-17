@@ -25,3 +25,10 @@ pnpm-debug.log*
 
 # Claude Code guidance (local only)
 CLAUDE.md
+
+# Local-only migration toolchain and planning docs
+tools/
+.vscode/
+*.md
+!README.md
+.vercel
