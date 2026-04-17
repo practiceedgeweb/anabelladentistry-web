@@ -15,8 +15,16 @@ const { contact, nav, zocDocUrl } = site;
         />
       </a>
       <div class="top-contact">
-        <p class="top-address">{contact.address.street} | {contact.address.city} {contact.address.state} {contact.address.zip}</p>
-        <a href={`tel:${contact.phoneTel}`} class="top-phone">{contact.phone}</a>
+        <a href="https://www.facebook.com/anabelladentistry" class="fb-icon" target="_blank" rel="noopener noreferrer" aria-label="AnaBella on Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" aria-hidden="true">
+            <circle cx="12" cy="12" r="12" fill="rgba(0,0,0,0.15)"/>
+            <path d="M15.1 8.3h-1.6c-.4 0-.5.2-.5.6v1.1h2.1l-.3 2.2h-1.8V18h-2.3v-5.8H9.5V10h1.2V8.7c0-1.7.9-2.7 2.8-2.7h1.6v2.3z" fill="#fff"/>
+          </svg>
+        </a>
+        <div>
+          <p class="top-address">{contact.address.street} | {contact.address.city} {contact.address.state} {contact.address.zip}</p>
+          <a href={`tel:${contact.phoneTel}`} class="top-phone">{contact.phone}</a>
+        </div>
       </div>
       <a href={zocDocUrl} class="btn-schedule" target="_blank" rel="noopener noreferrer">Schedule Online</a>
     </div>
@@ -66,7 +74,9 @@ const { contact, nav, zocDocUrl } = site;
   }
   .logo img { height: 70px; width: auto; display: block; }
 
-  .top-contact { text-align: center; }
+  .top-contact { display: flex; align-items: center; gap: 1rem; text-align: center; }
+  .fb-icon { display: flex; align-items: center; opacity: 0.9; transition: opacity 0.2s; }
+  .fb-icon:hover { opacity: 1; }
   .top-address {
     font-size: 0.82rem;
     color: var(--color-text-main);
