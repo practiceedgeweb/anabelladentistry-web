@@ -5,7 +5,6 @@ import Hero from '../components/Hero.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 import Services from '../components/Services.astro';
 import Testimonials from '../components/Testimonials.astro';
-import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import home from '../data/pages/home.json';
 import site from '../data/site.json';
@@ -98,23 +97,6 @@ import site from '../data/site.json';
     </section>
 
     <Testimonials />
-
-    <!-- Final CTA -->
-    <section class="final-cta">
-      <div class="container cta-inner">
-        <div class="cta-text">
-          <p class="cta-prefix">{home.finalCta.prefix}</p>
-          <h2>{home.finalCta.title}</h2>
-        </div>
-        <a href={home.finalCta.cta.href} class="btn-cta-circle">
-          <span class="cta-circle-inner">
-            REQUEST AN<br />APPOINTMENT
-          </span>
-        </a>
-      </div>
-    </section>
-
-    <Contact />
   </main>
 
   <Footer />
@@ -293,59 +275,6 @@ import site from '../data/site.json';
     line-height: 1.75;
   }
 
-  /* Final CTA */
-  .final-cta {
-    background: var(--color-accent);
-    padding: 4rem 0;
-  }
-  .cta-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-    flex-wrap: wrap;
-  }
-  .cta-text { flex: 1; }
-  .cta-prefix {
-    font-family: var(--font-heading);
-    font-size: 0.75rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--color-accent-hover);
-    margin-bottom: 0.75rem;
-    font-weight: 700;
-  }
-  .cta-text h2 {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-text-main);
-  }
-
-  .btn-cta-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background: #e07b20;
-    flex-shrink: 0;
-    transition: background 0.2s, transform 0.2s;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  }
-  .btn-cta-circle:hover { background: #c56a10; transform: scale(1.04); }
-  .cta-circle-inner {
-    font-family: var(--font-heading);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    line-height: 1.5;
-  }
-
   /* Responsive */
   @media (max-width: 900px) {
     .bio-grid { grid-template-columns: 1fr; }
@@ -354,7 +283,5 @@ import site from '../data/site.json';
     .tmj-img { max-height: 260px; }
     .hc-grid { grid-template-columns: 1fr; }
     .hc-divider { display: none; }
-    .cta-inner { flex-direction: column; align-items: center; text-align: center; }
-    .cta-text { text-align: center; }
   }
 </style>

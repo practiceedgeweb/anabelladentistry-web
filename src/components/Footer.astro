@@ -1,16 +1,91 @@
 ---
 import site from '../data/site.json';
+const { contact, hours } = site;
+const allDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+const finalCta = {
+  prefix: 'Ready to find out more?',
+  title: 'New Patient Special Offer',
+  href: '/special/',
+};
 ---
+
+<!-- ── Final CTA ── -->
+<section class="final-cta">
+  <div class="container cta-inner">
+    <div class="cta-text">
+      <p class="cta-prefix">{finalCta.prefix}</p>
+      <h2>{finalCta.title}</h2>
+    </div>
+    <a href={finalCta.href} class="btn-cta-circle">
+      <span class="cta-circle-inner">REQUEST AN<br />APPOINTMENT</span>
+    </a>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section id="contact" class="contact-section">
+  <div class="contact-grid">
+    <div class="contact-map">
+      <iframe
+        title="Map of AnaBella Family and Cosmetic Dentistry"
+        src={`https://www.google.com/maps?q=${encodeURIComponent(contact.address.street + ', ' + contact.address.city + ', ' + contact.address.state + ' ' + contact.address.zip)}&output=embed`}
+        loading="lazy"
+        width="100%"
+        height="100%"
+        style="border:0; min-height:400px;"
+        allowfullscreen="false"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <div class="contact-info">
+      <div class="trusted-badge">
+        <svg viewBox="0 0 80 80" width="80" height="80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="40" cy="40" r="38" fill="none" stroke="var(--color-accent-hover)" stroke-width="2"/>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="var(--color-accent)" stroke-width="1"/>
+          <text x="40" y="30" text-anchor="middle" font-family="Raleway,sans-serif" font-size="7" font-weight="700" fill="var(--color-accent-hover)" letter-spacing="2">TRUSTED</text>
+          <text x="40" y="42" text-anchor="middle" font-family="Raleway,sans-serif" font-size="7" font-weight="700" fill="var(--color-accent-hover)" letter-spacing="2">DENTIST</text>
+          <text x="40" y="54" text-anchor="middle" font-family="Raleway,sans-serif" font-size="6" fill="var(--color-text-muted)" letter-spacing="1">BELLEVUE WA</text>
+        </svg>
+      </div>
+      <h2>{site.businessName}</h2>
+      <address>
+        {contact.address.street}<br />
+        {contact.address.city}, {contact.address.state} {contact.address.zip}
+      </address>
+      <a href={`tel:${contact.phoneTel}`} class="contact-phone">{contact.phone}</a>
+      <div class="contact-actions">
+        <a href={site.zocDocUrl} class="btn-primary" target="_blank" rel="noopener noreferrer">Book Online</a>
+        <a href="/contact-us/" class="btn-outline-contact">Contact Us</a>
+      </div>
+    </div>
+
+    <div class="contact-hours">
+      <h3>Office Hours</h3>
+      <ul class="hours-list">
+        {allDays.map((d) => (
+          <li class={hours[d] === 'Closed' ? 'closed' : ''}>
+            <span class="day">{d}</span>
+            <span class="time">{hours[d]}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── Dark footer bar ── -->
 <footer class="site-footer">
   <div class="footer-main">
     <div class="container footer-inner">
       <div class="col">
         <strong>{site.businessName}</strong>
         <p>
-          {site.contact.address.street}<br />
-          {site.contact.address.city}, {site.contact.address.state} {site.contact.address.zip}
+          {contact.address.street}<br />
+          {contact.address.city}, {contact.address.state} {contact.address.zip}
         </p>
-        <p><a href={`tel:${site.contact.phoneTel}`}>{site.contact.phone}</a></p>
+        <p><a href={`tel:${contact.phoneTel}`}>{contact.phone}</a></p>
       </div>
       <div class="col">
         <strong>Policies</strong>
@@ -33,7 +108,7 @@ import site from '../data/site.json';
   </div>
   <div class="footer-bottom">
     <div class="container">
-      <p>COPYRIGHT © {new Date().getFullYear()} {site.businessName}. All rights reserved.</p>
+      <p>COPYRIGHT &copy; {new Date().getFullYear()} {site.businessName}. All rights reserved.</p>
       <nav class="footer-policy-nav" aria-label="Legal">
         {site.footer.links.slice(0, 4).map((l) => (
           <a href={l.href}>{l.text}</a>
@@ -44,11 +119,148 @@ import site from '../data/site.json';
 </footer>
 
 <style>
-  .site-footer {
-    background: var(--color-header-bg);
-    color: var(--color-header-text);
+  /* ── Final CTA ── */
+  .final-cta {
+    background: var(--color-accent);
+    padding: 4rem 0;
+  }
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .cta-text { flex: 1; }
+  .cta-prefix {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent-hover);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    display: block;
+  }
+  .cta-text h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+  }
+  .btn-cta-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: #e07b20;
+    flex-shrink: 0;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  .btn-cta-circle:hover { background: #c56a10; transform: scale(1.04); }
+  .cta-circle-inner {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    line-height: 1.5;
   }
 
+  /* ── Contact ── */
+  .contact-section { background: #fff; padding: 0; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    min-height: 420px;
+  }
+  .contact-map { overflow: hidden; }
+  .contact-map iframe { display: block; width: 100%; height: 100%; min-height: 420px; }
+
+  .contact-info {
+    padding: 3rem 2.5rem;
+    background: var(--color-accent-wave);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  .trusted-badge { margin-bottom: 0.5rem; }
+  .contact-info h2 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    line-height: 1.3;
+  }
+  address {
+    font-style: normal;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .contact-phone {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent-hover);
+    display: block;
+    margin-top: 0.25rem;
+  }
+  .contact-phone:hover { color: var(--color-text-main); }
+  .contact-actions { display: flex; flex-direction: column; gap: 0.6rem; align-items: flex-start; margin-top: 0.5rem; }
+  .btn-outline-contact {
+    display: inline-block;
+    border: 2px solid var(--color-accent-hover);
+    color: var(--color-accent-hover);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.65rem 1.4rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-outline-contact:hover { background: var(--color-accent-hover); color: #fff; }
+
+  .contact-hours {
+    padding: 3rem 2.5rem;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .contact-hours h3 {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-text-main);
+    margin-bottom: 1.25rem;
+  }
+  .hours-list { list-style: none; }
+  .hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9rem;
+  }
+  .hours-list li.closed { color: var(--color-text-muted); }
+  .day { font-weight: 600; color: var(--color-text-main); }
+  .time { color: var(--color-text-muted); }
+
+  /* ── Dark footer bar ── */
+  .site-footer { background: var(--color-header-bg); color: var(--color-header-text); }
   .footer-main { padding: 3rem 0; }
   .footer-inner {
     display: grid;
@@ -64,17 +276,8 @@ import site from '../data/site.json';
     color: var(--color-accent);
     margin-bottom: 1rem;
   }
-  .col p {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.75);
-    line-height: 1.7;
-    margin-bottom: 0.5rem;
-  }
-  .col a {
-    color: rgba(255,255,255,0.75);
-    font-size: 0.9rem;
-    transition: color 0.15s;
-  }
+  .col p { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 0.5rem; }
+  .col a { color: rgba(255,255,255,0.75); font-size: 0.9rem; transition: color 0.15s; }
   .col a:hover { color: var(--color-accent); }
   .col ul { list-style: none; }
   .col li { margin-bottom: 0.4rem; }
@@ -96,11 +299,7 @@ import site from '../data/site.json';
     font-weight: 600;
     letter-spacing: 0.04em;
   }
-  .footer-policy-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
+  .footer-policy-nav { display: flex; flex-wrap: wrap; gap: 1rem; }
   .footer-policy-nav a {
     font-size: 0.7rem;
     color: var(--color-text-main);
@@ -112,6 +311,13 @@ import site from '../data/site.json';
   }
   .footer-policy-nav a:hover { opacity: 1; }
 
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-map iframe { min-height: 280px; }
+    .cta-inner { flex-direction: column; align-items: center; text-align: center; }
+    .cta-text { text-align: center; }
+  }
   @media (max-width: 700px) {
     .footer-inner { grid-template-columns: 1fr; }
     .footer-bottom .container { flex-direction: column; align-items: flex-start; }
