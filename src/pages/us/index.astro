@@ -27,8 +27,8 @@ const drSong = {
 
 const brandi = {
   name: "Brandi",
-  photo: "/assets/2025/10/Dentist-Bellevue-WA-Brandi.webp",
-  photoFallback: "https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-Brandi.webp",
+  photo: "/assets/2025/10/Dentist-Bellevue-WA-Brandi-Meet-the-Team.webp",
+  photoFallback: "",
   bio: "Brandi has worked in the dental field for over fifteen years. Through the years, she has had great opportunities to expand her knowledge in the dental, TMJ, cosmetic and implantology fields. Brandi thoroughly enjoys working with the team to ensure all of our patients receive the highest level of care.",
 };
 ---
@@ -70,7 +70,7 @@ const brandi = {
             {drSong.longBio.map((p) => <p>{p}</p>)}
             <img
               src="/assets/2025/10/Dentist-Bellevue-WA-Affiliations.webp"
-              onerror="this.onerror=null;this.src='https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-Affiliations.webp';"
+              onerror="this.style.opacity='0'"
               alt="American Academy of Cosmetic Dentistry, ADA, and LVI Preferred Dentist logos"
               class="affil-logos"
               loading="lazy"
@@ -85,7 +85,7 @@ const brandi = {
         <div class="team-card team-card-simple">
           <img
             src={brandi.photo}
-            onerror={`this.onerror=null;this.src='${brandi.photoFallback}';`}
+            onerror="this.style.opacity='0'"
             alt="Brandi, dental team member"
             class="team-photo"
             width="240"
