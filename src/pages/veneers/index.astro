@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Veneers in Bellevue WA - AnaBella Family and Cosmetic Dentistry"} description={"Interested in Porcelain Veneers in Bellevue WA? Call the experienced team at AnaBella Family and Cosmetic Dentistry today."} canonical={"https://www.anabelladentistry.com/veneers/"} ogImage={"http://www.dental.inceptionimages.com/wp-content/uploads/2025/04/Dentist-Dental-and-Porcelain-Veneers.webp"}>
@@ -10,7 +11,8 @@ import Footer from '../../components/Footer.astro';
 <script type="application/ld+json" set:html={"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2025/04/Dentist-Dental-and-Porcelain-Veneers.webp\",\"url\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2025/04/Dentist-Dental-and-Porcelain-Veneers.webp\",\"contentUrl\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2025/04/Dentist-Dental-and-Porcelain-Veneers.webp\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/veneers/\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Dental & Porcelain Veneers in Bellevue WA`}</h1>
       <h2>{`Porcelain Dental Veneers in Bellevue WA`}</h2>
@@ -62,6 +64,8 @@ Bellevue WA 98004
       
       
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

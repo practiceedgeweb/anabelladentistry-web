@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Sleep Apnea in Bellevue WA | AnaBella Family and Cosmetic Dentistry"} description={"Sleep apnea doesn't just steal your sleep - it affects your heart health, energy levels, and your mood. We can help."} canonical={"https://www.anabelladentistry.com/sleep-apnea/"} ogImage={"/assets/2025/11/Dentist-Bellevue-WA-Sleep-Apnea.webp"}>
@@ -10,7 +11,8 @@ import Footer from '../../components/Footer.astro';
 <script type="application/ld+json" set:html={"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"https://www.anabelladentistry.com/wp-content/uploads/2025/11/Dentist-Bellevue-WA-Sleep-Apnea.webp\",\"url\":\"https://www.anabelladentistry.com/wp-content/uploads/2025/11/Dentist-Bellevue-WA-Sleep-Apnea.webp\",\"contentUrl\":\"https://www.anabelladentistry.com/wp-content/uploads/2025/11/Dentist-Bellevue-WA-Sleep-Apnea.webp\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/sleep-apnea/\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Stop Letting Sleep Apnea Steal Your Rest in Bellevue WA`}</h1>
       <h2>{`What Is Sleep Apnea in Bellevue WA?`}</h2>
@@ -82,6 +84,8 @@ Bellevue WA 98004
       
       
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

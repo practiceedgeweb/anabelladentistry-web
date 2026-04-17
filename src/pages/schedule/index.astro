@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Schedule Appointment Today"} description={"Schedule your appointment for the best dental care in Bellevue WA at AnaBella Family and Cosmetic Dentistry today. Your smile is our priority!"} canonical={"https://www.anabelladentistry.com/schedule/"} ogImage={"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Happy-Smiling-Couple-At-Home-CS1.webp"}>
@@ -10,7 +11,8 @@ import Footer from '../../components/Footer.astro';
 <script type="application/ld+json" set:html={"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Happy-Smiling-Couple-At-Home-CS1.webp\",\"url\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Happy-Smiling-Couple-At-Home-CS1.webp\",\"contentUrl\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Happy-Smiling-Couple-At-Home-CS1.webp\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/schedule/\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Schedule Your Appointment Today`}</h1>
       <p>{`Ready to take the next step toward a healthier smile? At AnaBella Family and Cosmetic Dentistry, we make scheduling an appointment simple and stress-free. Our friendly team is here to help you find a convenient time for your visit, answer any questions, and ensure you’re well-prepared for your appointment. Whether you’re coming in for a routine cleaning or need a specific treatment, we’re excited to meet you and support your dental health journey!`}</p>
@@ -24,6 +26,8 @@ import Footer from '../../components/Footer.astro';
       
       
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

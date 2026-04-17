@@ -3,13 +3,15 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Accessibility - AnaBella Family and Cosmetic Dentistry"} description={"This is the website Accessibility Policy for AnaBella Family and Cosmetic Dentistry. Give us a call with any questions you have."} canonical={"https://www.anabelladentistry.com/accessibility/"} ogImage={""}>
 <script type="application/ld+json" set:html={"{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/accessibility\\/\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/accessibility\\/\",\"name\":\"Accessibility - AnaBella Family and Cosmetic Dentistry\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\"},\"datePublished\":\"2026-02-09T16:29:52+00:00\",\"dateModified\":\"2026-02-09T16:42:02+00:00\",\"description\":\"This is the website Accessibility Policy for AnaBella Family and Cosmetic Dentistry. Give us a call with any questions you have.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/accessibility\\/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/www.anabelladentistry.com\\/accessibility\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/accessibility\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.anabelladentistry.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Accessibility\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/\",\"name\":\"AnaBella Family and Cosmetic Dentistry\",\"description\":\"Dentist in Bellevue WA\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.anabelladentistry.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Accessibility Statement`}</h1>
       <h3>{`UPDATED: June 2025`}</h3>
@@ -53,6 +55,8 @@ import Footer from '../../components/Footer.astro';
       
       
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

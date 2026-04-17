@@ -3,13 +3,15 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Website Healthcare Disclaimer"} description={"This is the website healthcare disclaimer for AnaBella Family and Cosmetic Dentistry in Bellevue WA. Give us a call with any questions."} canonical={"https://www.anabelladentistry.com/healthcare-disclaimer/"} ogImage={""}>
 <script type="application/ld+json" set:html={"{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/healthcare-disclaimer\\/\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/healthcare-disclaimer\\/\",\"name\":\"Website Healthcare Disclaimer\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\"},\"datePublished\":\"2026-02-09T16:29:52+00:00\",\"dateModified\":\"2026-02-09T22:46:11+00:00\",\"description\":\"This is the website healthcare disclaimer for AnaBella Family and Cosmetic Dentistry in Bellevue WA. Give us a call with any questions.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/healthcare-disclaimer\\/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/www.anabelladentistry.com\\/healthcare-disclaimer\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/healthcare-disclaimer\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.anabelladentistry.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Healthcare Disclaimer\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/\",\"name\":\"AnaBella Family and Cosmetic Dentistry\",\"description\":\"Dentist in Bellevue WA\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.anabelladentistry.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Healthcare Disclaimer`}</h1>
       <p>{`The information, including but not limited to, text, graphics, images and other material contained on this website are for informational purposes only. The purpose of this website is to promote broad consumer understanding and knowledge of various health topics. It is not intended to be a substitute for professional medical advice, diagnosis or treatment. Always seek the advice of your physician or other qualified health care provider with any questions you may have regarding a medical condition or treatment and before undertaking a new health care regimen, and never disregard professional medical advice or delay in seeking it because of something you have read on this website.`}</p>
@@ -23,6 +25,8 @@ import Footer from '../../components/Footer.astro';
       
       
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

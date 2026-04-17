@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Testimonials - AnaBella Family and Cosmetic Dentistry"} description={"See what others are saying about Dentist Clara H. Song D.D.S. at AnaBella Family and Cosmetic Dentistry in Bellevue WA."} canonical={"https://www.anabelladentistry.com/testimonials/"} ogImage={"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-at-dentist-teeth-cleaning.jpg"}>
@@ -10,7 +11,8 @@ import Footer from '../../components/Footer.astro';
 <script type="application/ld+json" set:html={"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-at-dentist-teeth-cleaning.jpg\",\"url\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-at-dentist-teeth-cleaning.jpg\",\"contentUrl\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-at-dentist-teeth-cleaning.jpg\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/testimonials/\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Testimonials For AnaBella Family and Cosmetic Dentistry`}</h1>
       <p>{`At AnaBella Family and Cosmetic Dentistry, we are committed to creating smiles from the inside out. Regardless of what dental issues you may have, we listen to your wants and needs to determine a solution. But don't just take our word for it, see what Dr. Clara H. Song's patients have to say about our services.`}</p>
@@ -40,6 +42,8 @@ Bellevue WA 98004
       
       
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

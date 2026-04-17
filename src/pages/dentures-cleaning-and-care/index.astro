@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Dentures Care and Cleaning in Bellevue WA"} description={"Denture care is vital for oral health in Bellevue WA! Learn proper maintenance tips from AnaBella Family and Cosmetic Dentistry."} canonical={"https://www.anabelladentistry.com/dentures-cleaning-and-care/"} ogImage={"http://www.dental.inceptionimages.com/wp-content/uploads/2024/10/Dentist-Senior-Woman-With-Dentures-Smiling-Closeup-CS1.webp"}>
@@ -10,7 +11,8 @@ import Footer from '../../components/Footer.astro';
 <script type="application/ld+json" set:html={"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/10/Dentist-Senior-Woman-With-Dentures-Smiling-Closeup-CS1.webp\",\"url\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/10/Dentist-Senior-Woman-With-Dentures-Smiling-Closeup-CS1.webp\",\"contentUrl\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/10/Dentist-Senior-Woman-With-Dentures-Smiling-Closeup-CS1.webp\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/dentures-cleaning-and-care/\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Proper Dentures Cleaning & Care in Bellevue WA`}</h1>
       <h2>{`Denture Cleaning and Care In Bellevue WA`}</h2>
@@ -66,6 +68,8 @@ Bellevue WA 98004
       
       <a href="/dentures/" class="btn-primary">{`Click Here For Denture FAQ's`}</a>
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

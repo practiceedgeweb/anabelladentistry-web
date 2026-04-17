@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Root Canal Symptoms in Bellevue WA"} description={"Are you suffering from tooth pain in Bellevue WA? Learn about root canal options from AnaBella Family and Cosmetic Dentistry."} canonical={"https://www.anabelladentistry.com/root-canal-symptoms/"} ogImage={"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Couple-Older-At-Beach-Smiling-CS1.webp"}>
@@ -10,7 +11,8 @@ import Footer from '../../components/Footer.astro';
 <script type="application/ld+json" set:html={"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Couple-Older-At-Beach-Smiling-CS1.webp\",\"url\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Couple-Older-At-Beach-Smiling-CS1.webp\",\"contentUrl\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Couple-Older-At-Beach-Smiling-CS1.webp\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/root-canal-symptoms/\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Root Canal Symptoms in Bellevue WA`}</h1>
       <h2>{`Root Canal Information in Bellevue WA`}</h2>
@@ -72,6 +74,8 @@ Bellevue WA 98004
       <a href="/root-canal-therapy/" class="btn-primary">{`Root Canal Therapy`}</a>
       <a href="/root-canal-recovery/" class="btn-primary">{`Root Canal Recovery`}</a>
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Patient Information for AnaBella Family and Cosmetic Dentistry"} description={"Download your new patient paperwork today. Or read about our financial and insurance policies. We are here to help."} canonical={"https://www.anabelladentistry.com/patient-information/"} ogImage={"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-professional-staff-smiling.jpg"}>
@@ -10,7 +11,8 @@ import Footer from '../../components/Footer.astro';
 <script type="application/ld+json" set:html={"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-professional-staff-smiling.jpg\",\"url\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-professional-staff-smiling.jpg\",\"contentUrl\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-professional-staff-smiling.jpg\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/patient-information/\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Patient Information`}</h1>
       <h3>{`New Patient Paperwork`}</h3>
@@ -64,6 +66,8 @@ Bellevue WA 98004
       
       
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

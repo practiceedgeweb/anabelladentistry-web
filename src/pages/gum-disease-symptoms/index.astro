@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Symptoms of Gum Disease"} description={"Learn about the symptoms of gum disease. AnaBella Family and Cosmetic Dentistry in Bellevue WA is here to help you find relief."} canonical={"https://www.anabelladentistry.com/gum-disease-symptoms/"} ogImage={"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Woman-Brushing-Her-Teeth-Smiling-CS1.webp"}>
@@ -10,7 +11,8 @@ import Footer from '../../components/Footer.astro';
 <script type="application/ld+json" set:html={"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Woman-Brushing-Her-Teeth-Smiling-CS1.webp\",\"url\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Woman-Brushing-Her-Teeth-Smiling-CS1.webp\",\"contentUrl\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Woman-Brushing-Her-Teeth-Smiling-CS1.webp\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/gum-disease-symptoms/\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Gum Disease Symptoms in Bellevue WA`}</h1>
       <h2>{`Symptoms Of Gum Disease in Bellevue WA`}</h2>
@@ -70,6 +72,8 @@ Bellevue WA 98004
       
       <a href="/gum-disease-treatment/" class="btn-primary">{`Gum Disease & Treatment Options`}</a>
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

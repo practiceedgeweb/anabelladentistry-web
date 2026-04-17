@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Preventative Dentistry in Bellevue WA"} description={"Proper dental care starts with preventative dentistry.AnaBella Family and Cosmetic Dentistry in Bellevue WA is here to help. Contact us today."} canonical={"https://www.anabelladentistry.com/preventative/"} ogImage={"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Woman-Pretty-Smile-Blue-Background-CS1.webp"}>
@@ -10,7 +11,8 @@ import Footer from '../../components/Footer.astro';
 <script type="application/ld+json" set:html={"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Woman-Pretty-Smile-Blue-Background-CS1.webp\",\"url\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Woman-Pretty-Smile-Blue-Background-CS1.webp\",\"contentUrl\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Woman-Pretty-Smile-Blue-Background-CS1.webp\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/preventative/\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Preventive Dentistry in Bellevue WA`}</h1>
       <h2>{`Emphasis Of Preventative Dentistry in Bellevue WA`}</h2>
@@ -50,6 +52,8 @@ Bellevue WA 98004
       <a href="/how-to-brush-your-teeth/" class="btn-primary">{`Brushing`}</a>
       <a href="/how-to-floss-your-teeth/" class="btn-primary">{`Flossing`}</a>
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

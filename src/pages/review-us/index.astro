@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Review Us - AnaBella Family and Cosmetic Dentistry"} description={"At AnaBella Family and Cosmetic Dentistry in Bellevue WA we work hard to help each and every one of our patients."} canonical={"https://www.anabelladentistry.com/review-us/"} ogImage={"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-laying-down-smiling.jpg"}>
@@ -10,7 +11,8 @@ import Footer from '../../components/Footer.astro';
 <script type="application/ld+json" set:html={"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-laying-down-smiling.jpg\",\"url\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-laying-down-smiling.jpg\",\"contentUrl\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-laying-down-smiling.jpg\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/review-us/\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`How Was Your Experience?`}</h1>
       <p>{`We are committed to creating smiles from the inside out.
@@ -28,6 +30,8 @@ import Footer from '../../components/Footer.astro';
       <a href="http://search.google.com/local/writereview?placeid=ChIJGWCelPJskFQRPyUauOk4Iac" class="btn-primary">{`PLEASANT`}</a>
       <a href="/describe-your-concern/" class="btn-primary">{`UNPLEASANT`}</a>
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

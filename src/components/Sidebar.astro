@@ -1,0 +1,139 @@
+---
+import site from '../data/site.json';
+const { contact, hours } = site;
+const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+---
+<aside class="interior-sidebar">
+  <!-- Orange circle CTA -->
+  <a href="/special/" class="sidebar-cta-circle">
+    <span>NEW<br />PATIENT<br />SPECIAL</span>
+    <span class="sidebar-cta-sub">CLICK HERE &rsaquo;</span>
+  </a>
+
+  <!-- Address + phone -->
+  <div class="sidebar-contact">
+    <strong>{site.businessName}</strong>
+    <p>
+      {contact.address.street}<br />
+      {contact.address.city} {contact.address.state} {contact.address.zip}
+    </p>
+    <a href={`tel:${contact.phoneTel}`} class="sidebar-phone">{contact.phone}</a>
+  </div>
+
+  <hr class="sidebar-rule" />
+
+  <!-- Office hours -->
+  <div class="sidebar-hours">
+    <h3>Office Hours</h3>
+    <ul>
+      {weekdays.map((d) => (
+        <li class={hours[d] === 'Closed' ? 'closed' : ''}>
+          <strong>{d}</strong>
+          <span>{hours[d]}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</aside>
+
+<style>
+  .interior-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Orange circle */
+  .sidebar-cta-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #e07b20;
+    color: #fff;
+    text-align: center;
+    align-self: center;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    padding: 1rem;
+  }
+  .sidebar-cta-circle:hover { background: #c56a10; transform: scale(1.04); }
+  .sidebar-cta-circle span {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+  }
+  .sidebar-cta-sub {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.7rem !important;
+    letter-spacing: 0.1em;
+    margin-top: 0.4rem;
+    font-weight: 600 !important;
+  }
+
+  /* Contact block */
+  .sidebar-contact {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .sidebar-contact strong {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    display: block;
+  }
+  .sidebar-contact p {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+  .sidebar-phone {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-accent-hover);
+    display: block;
+  }
+  .sidebar-phone:hover { color: var(--color-text-main); }
+
+  .sidebar-rule {
+    border: none;
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* Hours */
+  .sidebar-hours h3 {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent-hover);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .sidebar-hours ul { list-style: none; }
+  .sidebar-hours li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.35rem 0;
+    font-size: 0.85rem;
+    color: var(--color-text-main);
+  }
+  .sidebar-hours li.closed { color: var(--color-text-muted); }
+  .sidebar-hours li strong { font-weight: 700; }
+  .sidebar-hours li span { color: var(--color-text-muted); }
+</style>

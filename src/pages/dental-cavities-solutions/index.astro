@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Tooth Decay and Cavities In Bellevue WA"} description={"Learn about the causes, symptoms, and prevention of cavities and tooth decay in Bellevue WA, from team at AnaBella Family and Cosmetic Dentistry."} canonical={"https://www.anabelladentistry.com/dental-cavities-solutions/"} ogImage={"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Dental-Cavities-and-Tooth-Decay-CS1.webp"}>
@@ -10,7 +11,8 @@ import Footer from '../../components/Footer.astro';
 <script type="application/ld+json" set:html={"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Dental-Cavities-and-Tooth-Decay-CS1.webp\",\"url\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Dental-Cavities-and-Tooth-Decay-CS1.webp\",\"contentUrl\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2024/11/Dental-Cavities-and-Tooth-Decay-CS1.webp\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/dental-cavities-solutions/\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`What Are Cavities and Tooth Decay in Bellevue WA`}</h1>
       <h2>{`Why Do Cavities in Bellevue WA Happen?`}</h2>
@@ -128,6 +130,8 @@ Almost all adults over the age of 65 have had cavities. As gums recede, seniors 
       
       
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

@@ -3,13 +3,15 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"About Us - AnaBella Family and Cosmetic Dentistry"} description={"Meet the team at AnaBella Family and Cosmetic Dentistry today. We are here to serve the people of Bellevue WA."} canonical={"https://www.anabelladentistry.com/us/"} ogImage={"/assets/2025/10/Dentist-Bellevue-WA-Clara-H.-Song-Meet-the-Team.webp"}>
 <script type="application/ld+json" set:html={"{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/us\\/\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/us\\/\",\"name\":\"About Us - AnaBella Family and Cosmetic Dentistry\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/us\\/#primaryimage\"},\"image\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/us\\/#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/www.anabelladentistry.com\\/wp-content\\/uploads\\/2025\\/10\\/Dentist-Bellevue-WA-Clara-H.-Song-Meet-the-Team.webp\",\"datePublished\":\"2026-02-09T16:29:52+00:00\",\"dateModified\":\"2026-02-09T22:52:42+00:00\",\"description\":\"Meet the team at AnaBella Family and Cosmetic Dentistry today. We are here to serve the people of Bellevue WA.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/us\\/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/www.anabelladentistry.com\\/us\\/\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/us\\/#primaryimage\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/wp-content\\/uploads\\/2025\\/10\\/Dentist-Bellevue-WA-Clara-H.-Song-Meet-the-Team.webp\",\"contentUrl\":\"https:\\/\\/www.anabelladentistry.com\\/wp-content\\/uploads\\/2025\\/10\\/Dentist-Bellevue-WA-Clara-H.-Song-Meet-the-Team.webp\",\"width\":250,\"height\":250,\"caption\":\"Clara H. Song is a dentist at AnaBella Family and Cosmetic Dentistry\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/us\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.anabelladentistry.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"About Us\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/\",\"name\":\"AnaBella Family and Cosmetic Dentistry\",\"description\":\"Dentist in Bellevue WA\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.anabelladentistry.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Meet The Team`}</h1>
       <h3>{`Clara H. Song D.D.S.`}</h3>
@@ -81,6 +83,8 @@ Bellevue WA 98004
       <img src="/assets/2025/10/Dentist-Bellevue-WA-Eric-Kim-Meet-the-Team.webp" alt="Eric Kim, a dentist at AnaBella Family and Cosmetic Dentistry, smiles for potential patients" loading="lazy" decoding="async" />
       
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

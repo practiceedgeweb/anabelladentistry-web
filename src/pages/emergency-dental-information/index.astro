@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Dental Emergency in Bellevue WA"} description={"Emergency dental care tips in Bellevue WA. Quick steps for handling toothaches, knocked-out teeth, bleeding, and more."} canonical={"https://www.anabelladentistry.com/emergency-dental-information/"} ogImage={"http://www.dental.inceptionimages.com/wp-content/uploads/2025/04/Dentist-Emergency-Dental-Information.webp"}>
@@ -10,7 +11,8 @@ import Footer from '../../components/Footer.astro';
 <script type="application/ld+json" set:html={"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2025/04/Dentist-Emergency-Dental-Information.webp\",\"url\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2025/04/Dentist-Emergency-Dental-Information.webp\",\"contentUrl\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2025/04/Dentist-Emergency-Dental-Information.webp\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/emergency-dental-information/\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Emergency Dental Information in Bellevue WA`}</h1>
       <h3>{`Toothaches in Bellevue WA`}</h3>
@@ -70,6 +72,8 @@ Bellevue WA 98004
       
       
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

@@ -3,13 +3,15 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Website Terms of Service"} description={"This is the website Terms of Service for AnaBella Family and Cosmetic Dentistry. Give us a call with any questions."} canonical={"https://www.anabelladentistry.com/terms-service/"} ogImage={""}>
 <script type="application/ld+json" set:html={"{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/terms-service\\/\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/terms-service\\/\",\"name\":\"Website Terms of Service\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\"},\"datePublished\":\"2026-02-09T16:29:52+00:00\",\"dateModified\":\"2026-02-09T23:08:37+00:00\",\"description\":\"This is the website Terms of Service for AnaBella Family and Cosmetic Dentistry. Give us a call with any questions.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/terms-service\\/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/www.anabelladentistry.com\\/terms-service\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/terms-service\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.anabelladentistry.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Website Terms of Service\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/\",\"name\":\"AnaBella Family and Cosmetic Dentistry\",\"description\":\"Dentist in Bellevue WA\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.anabelladentistry.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Terms of Service`}</h1>
       <p>{`By accessing this web site, you are agreeing to be bound by these web site Terms and Conditions of Use, all applicable laws, and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable copyright and trademark law.`}</p>
@@ -35,6 +37,8 @@ import Footer from '../../components/Footer.astro';
       
       
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

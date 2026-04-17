@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Describe Your Concern - AnaBella Family and Cosmetic Dentistry"} description={"Describe your concern. We do our best at AnaBella Family and Cosmetic Dentistry to help each patient reach their healthcare goals."} canonical={"https://www.anabelladentistry.com/describe-your-concern/"} ogImage={"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/misc-dentist-cleaning-teeth.jpg"}>
@@ -10,7 +11,8 @@ import Footer from '../../components/Footer.astro';
 <script type="application/ld+json" set:html={"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/misc-dentist-cleaning-teeth.jpg\",\"url\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/misc-dentist-cleaning-teeth.jpg\",\"contentUrl\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/misc-dentist-cleaning-teeth.jpg\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/describe-your-concern/\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Describe Your Concern`}</h1>
       <p>{`At AnaBella Family and Cosmetic Dentistry in Bellevue WA, we are committed to creating smiles from the inside out. Please let us know what we could have done to improve your experience in our office by filling out the form below.`}</p>
@@ -24,6 +26,8 @@ import Footer from '../../components/Footer.astro';
       
       
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />

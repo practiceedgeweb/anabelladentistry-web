@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title={"Clear Aligners in Bellevue WA"} description={"Are you looking for Clear Aligners in Bellevue WA? Contact the team at AnaBella Family and Cosmetic Dentistry today."} canonical={"https://www.anabelladentistry.com/clear-aligners/"} ogImage={"http://www.dental.inceptionimages.com/wp-content/uploads/2025/06/General-Dentistry-Woman-Smiling-with-Clear-Aligners-Den-CS1.webp"}>
@@ -10,7 +11,8 @@ import Footer from '../../components/Footer.astro';
 <script type="application/ld+json" set:html={"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2025/06/General-Dentistry-Woman-Smiling-with-Clear-Aligners-Den-CS1.webp\",\"url\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2025/06/General-Dentistry-Woman-Smiling-with-Clear-Aligners-Den-CS1.webp\",\"contentUrl\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2025/06/General-Dentistry-Woman-Smiling-with-Clear-Aligners-Den-CS1.webp\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/clear-aligners/\"}]}"}></script>
   <Header />
   <main class="interior-page">
-    <div class="container">
+    <div class="container interior-grid">
+      <div class="interior-content">
     <section class="sec sec-0">
       <h1>{`Clear Aligners in Bellevue WA`}</h1>
       <h2>{`What Are Clear Aligners in Bellevue WA?`}</h2>
@@ -84,6 +86,8 @@ Throughout your treatment, periodic visits will ensure everything is progressing
       
       
     </section>
+      </div>
+      <Sidebar />
     </div>
   </main>
   <Footer />
