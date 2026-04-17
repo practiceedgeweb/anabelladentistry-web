@@ -21,7 +21,10 @@ const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
           <li><strong>{d}:</strong> <span>{hours[d]}</span></li>
         ))}
       </ul>
-      <a href="/schedule/" class="btn-primary">Schedule Appointment</a>
+      <div class="cta-group">
+        <a href={site.zocDocUrl} class="btn-primary" target="_blank" rel="noopener noreferrer">Book Online via ZocDoc</a>
+        <a href="/schedule/" class="btn-outline">More Scheduling Options</a>
+      </div>
     </div>
     <div class="map">
       <iframe
@@ -73,6 +76,19 @@ const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
     border-bottom: 1px solid var(--color-border);
     max-width: 340px;
   }
+  .cta-group { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+  .btn-outline {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    border: 2px solid var(--color-accent-hover);
+    color: var(--color-accent-hover);
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { background: var(--color-accent-hover); color: #fff; }
   .map iframe { width: 100%; border-radius: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
   @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
 </style>
