@@ -8,6 +8,7 @@ import Testimonials from '../components/Testimonials.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import home from '../data/pages/home.json';
+import site from '../data/site.json';
 ---
 
 <Layout
@@ -20,72 +21,96 @@ import home from '../data/pages/home.json';
 
   <main>
     <Hero />
-    <TrustSignals />
-    <Services />
 
-    <section class="intro-bio section">
-      <div class="container bio">
-        <div class="bio-text">
-          <span class="sub-label">{home.sleepApnea.heading}</span>
-          <h2>Breathe Better. Sleep Better.</h2>
-          <p>{home.sleepApnea.body}</p>
-          <a href={home.sleepApnea.cta.href} class="btn-primary">{home.sleepApnea.cta.text}</a>
-        </div>
-        <div class="bio-image">
+    <!-- Doctor Bio -->
+    <section class="doctor-bio">
+      <div class="bio-grid">
+        <div class="bio-img-wrap">
           <img
-            src="/assets/external/dental-snoring.webp"
-            onerror="this.onerror=null;this.src='http://www.dental.inceptionimages.com/wp-content/uploads/2024/12/Dentist-Learning-New-Technique-At-A-School-Leaf-D.webp';"
-            alt="Sleep apnea treatment"
+            src={`/assets/2025/10/${home.hero.image.src.split('/').pop()}`}
+            onerror={`this.onerror=null;this.src='${home.hero.image.src}';`}
+            alt={home.hero.image.alt}
             loading="lazy"
-            width="600"
-            height="400"
+            decoding="async"
           />
         </div>
+        <div class="bio-card">
+          <span class="bio-kicker">Dentist Bellevue WA</span>
+          <h2>Welcome to AnaBella Family and Cosmetic Dentistry</h2>
+          <p>{home.hero.body}</p>
+          <p class="bio-secondary">{home.hero.secondaryBody}</p>
+          <a href={home.hero.secondaryCta.href} class="btn-meet">MEET THE DOCTOR</a>
+        </div>
       </div>
     </section>
 
-    <section class="insurance section">
-      <div class="container text-center">
-        <span class="sub-label">Insurance</span>
-        <h2>{home.insurance.heading}</h2>
-        <p>{home.insurance.body}</p>
+    <TrustSignals />
+
+    <Services />
+
+    <!-- Insurance -->
+    <section class="insurance-bar">
+      <div class="container insurance-inner">
+        <div class="insurance-text">
+          <h2>{home.insurance.heading}</h2>
+          <p>{home.insurance.body}</p>
+        </div>
+        <a href="/dental-insurance-accepted/" class="btn-insurance">VIEW INSURANCES</a>
       </div>
     </section>
 
-    <section class="history section">
-      <div class="container text-center narrow">
-        <span class="sub-label">Our History</span>
-        <h2>{home.practiceHistory.heading}</h2>
-        <p>{home.practiceHistory.body}</p>
+    <!-- Practice History + Comfort (dark brown bg) -->
+    <section class="history-comfort">
+      <div class="container hc-grid">
+        <div class="hc-col">
+          <span class="hc-kicker">Our History</span>
+          <h2>{home.practiceHistory.heading}</h2>
+          <p>{home.practiceHistory.body}</p>
+        </div>
+        <div class="hc-divider" aria-hidden="true"></div>
+        <div class="hc-col">
+          <span class="hc-kicker">Comfort First</span>
+          <h2>{home.comfort.heading}</h2>
+          <p>{home.comfort.body}</p>
+        </div>
       </div>
     </section>
 
-    <section class="comfort section">
-      <div class="container text-center narrow">
-        <span class="sub-label">Comfort First</span>
-        <h2>{home.comfort.heading}</h2>
-        <p>{home.comfort.body}</p>
-      </div>
-    </section>
-
-    <section class="tmj section">
-      <div class="container bio reverse">
-        <div class="bio-text">
-          <span class="sub-label">{home.tmj.heading}</span>
+    <!-- TMJ Section -->
+    <section class="tmj-section">
+      <div class="tmj-grid">
+        <div class="tmj-img">
+          <img
+            src="/assets/2025/10/Dentist-Bellevue-WA-TMJ.webp"
+            onerror="this.onerror=null;this.src='https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-TMJ.webp';"
+            alt="TMJ treatment at AnaBella Family and Cosmetic Dentistry"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="tmj-card">
+          <span class="bio-kicker">TMJ Therapy</span>
           <h2>Relief From Jaw Pain &amp; Headaches</h2>
           <p>{home.tmj.body}</p>
-          <a href={home.tmj.cta.href} class="btn-primary">{home.tmj.cta.text}</a>
+          <a href={home.tmj.cta.href} class="btn-meet">LEARN MORE</a>
         </div>
       </div>
     </section>
 
     <Testimonials />
 
-    <section class="final-cta section">
-      <div class="container text-center">
-        <p class="prefix">{home.finalCta.prefix}</p>
-        <h2>{home.finalCta.title}</h2>
-        <a href={home.finalCta.cta.href} class="btn-primary">{home.finalCta.cta.text}</a>
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <div class="container cta-inner">
+        <div class="cta-text">
+          <p class="cta-prefix">{home.finalCta.prefix}</p>
+          <h2>{home.finalCta.title}</h2>
+        </div>
+        <a href={home.finalCta.cta.href} class="btn-cta-circle">
+          <span class="cta-circle-inner">
+            REQUEST AN<br />APPOINTMENT
+          </span>
+        </a>
       </div>
     </section>
 
@@ -96,45 +121,240 @@ import home from '../data/pages/home.json';
 </Layout>
 
 <style>
-  .text-center { text-align: center; }
-  .narrow { max-width: 760px; margin: 0 auto; }
-
-  .intro-bio, .tmj { background: #fff; }
-  .bio {
+  /* Doctor Bio */
+  .doctor-bio { background: #fff; }
+  .bio-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    grid-template-columns: 420px 1fr;
+    min-height: 500px;
+    max-width: var(--container-width);
+    margin: 0 auto;
   }
-  .bio.reverse .bio-text { grid-column: 1; }
-  .bio h2 { font-size: 2rem; margin-bottom: 1rem; }
-  .bio-image img {
+  .bio-img-wrap { overflow: hidden; }
+  .bio-img-wrap img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
   }
-
-  .insurance { background: var(--color-bg-warm); }
-  .insurance h2 { font-size: 1.5rem; }
-  .history { background: #fff; }
-  .comfort { background: var(--color-accent-wave); }
-
-  .final-cta { background: var(--color-accent-hover); color: #fff; text-align: center; }
-  .final-cta h2 { color: #fff; font-size: 2.25rem; margin-bottom: 1.5rem; }
-  .final-cta .prefix {
+  .bio-card {
+    background: var(--color-accent);
+    padding: 4rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .bio-kicker {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 0.75rem;
-  }
-  .final-cta .btn-primary {
-    background: #fff;
     color: var(--color-accent-hover);
   }
-  .final-cta .btn-primary:hover { background: var(--color-text-main); color: #fff; }
+  .bio-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    line-height: 1.25;
+  }
+  .bio-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+    line-height: 1.75;
+  }
+  .bio-secondary { font-style: italic; opacity: 0.85; }
+  .btn-meet {
+    display: inline-block;
+    align-self: flex-start;
+    background: var(--color-accent-hover);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.75rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+  }
+  .btn-meet:hover { background: #5fa2a7; }
 
+  /* Insurance bar */
+  .insurance-bar { background: var(--color-bg-warm); padding: 3rem 0; }
+  .insurance-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .insurance-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-main);
+  }
+  .insurance-text p { color: var(--color-text-muted); font-size: 0.95rem; }
+  .btn-insurance {
+    display: inline-block;
+    background: var(--color-accent-hover);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.75rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .btn-insurance:hover { background: #5fa2a7; }
+
+  /* History + Comfort — dark brown */
+  .history-comfort {
+    background: #5c4a3a;
+    padding: 5rem 0;
+  }
+  .hc-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .hc-col { color: rgba(255,255,255,0.9); }
+  .hc-kicker {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+  .hc-col h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .hc-col p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.8);
+  }
+  .hc-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.15);
+    align-self: stretch;
+    margin: 1rem 0;
+  }
+
+  /* TMJ section */
+  .tmj-section { background: #fff; }
+  .tmj-grid {
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    min-height: 400px;
+  }
+  .tmj-img { overflow: hidden; }
+  .tmj-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .tmj-card {
+    background: var(--color-accent-wave);
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .tmj-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    line-height: 1.25;
+  }
+  .tmj-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+    line-height: 1.75;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    background: var(--color-accent);
+    padding: 4rem 0;
+  }
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .cta-text { flex: 1; }
+  .cta-prefix {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent-hover);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+  }
+  .cta-text h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+  }
+
+  .btn-cta-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: #e07b20;
+    flex-shrink: 0;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  .btn-cta-circle:hover { background: #c56a10; transform: scale(1.04); }
+  .cta-circle-inner {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* Responsive */
   @media (max-width: 900px) {
-    .bio { grid-template-columns: 1fr; }
+    .bio-grid { grid-template-columns: 1fr; }
+    .bio-img-wrap { max-height: 320px; }
+    .tmj-grid { grid-template-columns: 1fr; }
+    .tmj-img { max-height: 260px; }
+    .hc-grid { grid-template-columns: 1fr; }
+    .hc-divider { display: none; }
+    .cta-inner { flex-direction: column; align-items: center; text-align: center; }
+    .cta-text { text-align: center; }
   }
 </style>

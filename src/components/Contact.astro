@@ -1,94 +1,167 @@
 ---
 import site from '../data/site.json';
 const { contact, hours } = site;
-const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+const weekend = ['Saturday', 'Sunday'];
 ---
 <section id="contact" class="contact section">
-  <div class="container grid">
-    <div class="info">
-      <span class="sub-label">Contact Us Today!</span>
-      <h2>{site.businessName}</h2>
-      <address>
-        {contact.address.street}<br>
-        {contact.address.city}, {contact.address.state} {contact.address.zip}
-      </address>
-      <p class="phone-line">
-        <a href={`tel:${contact.phoneTel}`}>{contact.phone}</a>
-      </p>
-      <h3>Office Hours</h3>
-      <ul class="hours">
-        {days.map((d) => (
-          <li><strong>{d}:</strong> <span>{hours[d]}</span></li>
-        ))}
-      </ul>
-      <div class="cta-group">
-        <a href={site.zocDocUrl} class="btn-primary" target="_blank" rel="noopener noreferrer">Book Online via ZocDoc</a>
-        <a href="/schedule/" class="btn-outline">More Scheduling Options</a>
-      </div>
-    </div>
-    <div class="map">
+  <div class="contact-grid">
+    <!-- Map -->
+    <div class="contact-map">
       <iframe
         title="Map of AnaBella Family and Cosmetic Dentistry"
         src={`https://www.google.com/maps?q=${encodeURIComponent(contact.address.street + ', ' + contact.address.city + ', ' + contact.address.state + ' ' + contact.address.zip)}&output=embed`}
         loading="lazy"
         width="100%"
-        height="450"
-        style="border:0;"
+        height="100%"
+        style="border:0; min-height:400px;"
         allowfullscreen="false"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
+    </div>
+
+    <!-- Contact info + badge -->
+    <div class="contact-info">
+      <div class="trusted-badge">
+        <svg viewBox="0 0 80 80" width="80" height="80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="40" cy="40" r="38" fill="none" stroke="var(--color-accent-hover)" stroke-width="2"/>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="var(--color-accent)" stroke-width="1"/>
+          <text x="40" y="30" text-anchor="middle" font-family="Raleway,sans-serif" font-size="7" font-weight="700" fill="var(--color-accent-hover)" letter-spacing="2">TRUSTED</text>
+          <text x="40" y="42" text-anchor="middle" font-family="Raleway,sans-serif" font-size="7" font-weight="700" fill="var(--color-accent-hover)" letter-spacing="2">DENTIST</text>
+          <text x="40" y="54" text-anchor="middle" font-family="Raleway,sans-serif" font-size="6" fill="var(--color-text-muted)" letter-spacing="1">BELLEVUE WA</text>
+        </svg>
+      </div>
+
+      <h2>{site.businessName}</h2>
+      <address>
+        {contact.address.street}<br />
+        {contact.address.city}, {contact.address.state} {contact.address.zip}
+      </address>
+      <a href={`tel:${contact.phoneTel}`} class="contact-phone">{contact.phone}</a>
+
+      <div class="contact-actions">
+        <a href={site.zocDocUrl} class="btn-primary" target="_blank" rel="noopener noreferrer">Book Online</a>
+        <a href="/contact-us/" class="btn-outline-contact">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- Hours -->
+    <div class="contact-hours">
+      <h3>Office Hours</h3>
+      <ul class="hours-list">
+        {weekdays.map((d) => (
+          <li>
+            <span class="day">{d}</span>
+            <span class="time">{hours[d]}</span>
+          </li>
+        ))}
+        {weekend.map((d) => (
+          <li class="closed">
+            <span class="day">{d}</span>
+            <span class="time">{hours[d]}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   </div>
 </section>
 
 <style>
-  .contact { background: #fff; }
-  .grid {
+  .contact { background: #fff; padding: 0; }
+
+  .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 3rem;
-    align-items: start;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    min-height: 420px;
   }
-  .info h2 { font-size: 1.75rem; margin-bottom: 1rem; }
+
+  .contact-map { overflow: hidden; }
+  .contact-map iframe { display: block; width: 100%; height: 100%; min-height: 420px; }
+
+  .contact-info {
+    padding: 3rem 2.5rem;
+    background: var(--color-accent-wave);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  .trusted-badge {
+    margin-bottom: 0.5rem;
+  }
+  .contact-info h2 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    line-height: 1.3;
+  }
   address {
     font-style: normal;
-    margin-bottom: 1rem;
-    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
   }
-  .phone-line { margin-bottom: 2rem; }
-  .phone-line a {
+  .contact-phone {
     font-family: var(--font-heading);
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-accent-hover);
+    display: block;
+    margin-top: 0.25rem;
   }
-  .info h3 {
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 0.75rem;
-  }
-  .hours { list-style: none; margin-bottom: 2rem; }
-  .hours li {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.4rem 0;
-    border-bottom: 1px solid var(--color-border);
-    max-width: 340px;
-  }
-  .cta-group { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; }
-  .btn-outline {
+  .contact-phone:hover { color: var(--color-text-main); }
+
+  .contact-actions { display: flex; flex-direction: column; gap: 0.6rem; align-items: flex-start; margin-top: 0.5rem; }
+  .btn-outline-contact {
     display: inline-block;
-    padding: 0.6rem 1.4rem;
     border: 2px solid var(--color-accent-hover);
     color: var(--color-accent-hover);
-    border-radius: 4px;
     font-family: var(--font-heading);
-    font-weight: 600;
-    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.65rem 1.4rem;
+    border-radius: 4px;
     transition: background 0.2s, color 0.2s;
   }
-  .btn-outline:hover { background: var(--color-accent-hover); color: #fff; }
-  .map iframe { width: 100%; border-radius: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
-  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  .btn-outline-contact:hover { background: var(--color-accent-hover); color: #fff; }
+
+  /* Hours column */
+  .contact-hours {
+    padding: 3rem 2.5rem;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .contact-hours h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-text-main);
+    margin-bottom: 1.25rem;
+  }
+  .hours-list { list-style: none; }
+  .hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9rem;
+    color: var(--color-text-main);
+  }
+  .hours-list li.closed { color: var(--color-text-muted); }
+  .day { font-weight: 600; }
+  .time { color: var(--color-text-muted); }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-map iframe { min-height: 280px; }
+  }
 </style>

@@ -1,82 +1,152 @@
 ---
 import home from '../data/pages/home.json';
 const services = home.services;
+const sleepApnea = home.sleepApnea;
 ---
-<section id="services" class="services section">
-  <div class="container">
-    <div class="section-header">
-      <span class="sub-label">Our Services</span>
-      <h2>Comprehensive Dental Care, Bellevue WA</h2>
-    </div>
-    <div class="grid">
+<section id="services" class="services-section">
+  <div class="services-wrap">
+    <!-- 2×2 image overlay grid -->
+    <div class="services-grid">
       {services.map((s) => (
-        <a class="card" href={s.href}>
-          <div class="img-wrap">
-            <img
-              src={`/assets/2025/10/${s.image.split('/').pop()}`}
-              onerror={`this.onerror=null;this.src='${s.image}';`}
-              alt={s.alt}
-              loading="lazy"
-              decoding="async"
-              width="600"
-              height="400"
-            />
+        <a class="service-tile" href={s.href}>
+          <img
+            src={`/assets/2025/10/${s.image.split('/').pop()}`}
+            onerror={`this.onerror=null;this.src='${s.image}';`}
+            alt={s.alt}
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="tile-overlay">
+            <span class="tile-title">{s.title}</span>
           </div>
-          <h3>{s.title}</h3>
-          <span class="arrow">Learn more →</span>
         </a>
       ))}
     </div>
+
+    <!-- Sleep Apnea sidebar -->
+    <aside class="sleep-apnea-sidebar">
+      <div class="sidebar-inner">
+        <p class="sidebar-kicker">Sleep Apnea</p>
+        <h3>Do You Suffer From Sleep Apnea?</h3>
+        <p>{sleepApnea.body}</p>
+        <a href={sleepApnea.cta.href} class="btn-sidebar">LEARN MORE</a>
+      </div>
+    </aside>
   </div>
 </section>
 
 <style>
-  .services { background: #fff; }
-  .section-header { text-align: center; margin-bottom: 3rem; }
-  .section-header h2 { font-size: 2rem; }
-  .grid {
+  .services-section { background: #fff; }
+
+  .services-wrap {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: 1fr 320px;
+    max-width: var(--container-width);
+    margin: 0 auto;
   }
-  .card {
-    background: #fff;
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
+
+  /* 2×2 grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .service-tile {
+    position: relative;
+    display: block;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.2s ease;
+    color: #fff;
   }
-  .card:hover {
-    border-color: var(--color-accent-hover);
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-  }
-  .img-wrap {
-    width: 100%;
-    aspect-ratio: 3 / 2;
-    overflow: hidden;
-  }
-  .img-wrap img {
+  .service-tile img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    display: block;
+    transition: transform 0.4s ease;
   }
-  .card:hover .img-wrap img { transform: scale(1.05); }
-  .card h3 {
-    margin: 1rem 1.25rem 0.25rem;
-    font-size: 1.15rem;
+  .service-tile:hover img { transform: scale(1.06); }
+
+  .tile-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    transition: background 0.3s;
   }
-  .arrow {
-    margin: 0 1.25rem 1.25rem;
-    color: var(--color-accent-hover);
-    font-size: 0.85rem;
+  .service-tile:hover .tile-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.25) 60%, transparent 100%);
+  }
+  .tile-title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
     font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
   }
 
-  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 500px) { .grid { grid-template-columns: 1fr; } }
+  /* Sidebar */
+  .sleep-apnea-sidebar {
+    background: var(--color-accent);
+    display: flex;
+    align-items: stretch;
+  }
+  .sidebar-inner {
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .sidebar-kicker {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent-hover);
+  }
+  .sidebar-inner h3 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    line-height: 1.25;
+  }
+  .sidebar-inner p {
+    font-size: 0.9rem;
+    color: var(--color-text-main);
+    line-height: 1.7;
+  }
+  .btn-sidebar {
+    display: inline-block;
+    align-self: flex-start;
+    background: var(--color-accent-hover);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.65rem 1.5rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+  }
+  .btn-sidebar:hover { background: #5fa2a7; }
+
+  @media (max-width: 900px) {
+    .services-wrap { grid-template-columns: 1fr; }
+    .sleep-apnea-sidebar { order: -1; }
+    .sidebar-inner { padding: 2rem; }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .service-tile { aspect-ratio: 16 / 9; }
+  }
 </style>

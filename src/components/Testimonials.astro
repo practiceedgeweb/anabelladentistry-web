@@ -5,19 +5,26 @@ const quotes = site.testimonials;
 <section class="testimonials section">
   <div class="container">
     <div class="section-header">
-      <span class="sub-label">What Our Patients Say</span>
-      <h2>Trusted by Bellevue Families</h2>
+      <span class="sub-label">Patient Testimonials</span>
+      <h2>What Our Patients Say</h2>
     </div>
-    <div class="grid">
-      {quotes.map((t) => (
-        <figure class="card">
-          <blockquote>{`\u201C${t.quote}\u201D`}</blockquote>
+
+    <div class="testimonial-cards">
+      {quotes.map((t, i) => (
+        <figure class={`testimonial-card ${i === 0 ? 'featured' : ''}`}>
+          <div class="quote-mark" aria-hidden="true">
+            <svg viewBox="0 0 60 45" width="60" height="45" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 45V27.5C0 18.333 2.583 11.25 7.75 6.25 12.917 1.083 20.333-1 30 0l2 6c-5.333.667-9.25 2.917-11.75 6.75C17.75 16.583 16.5 21 16.5 26H26V45H0zm34 0V27.5C34 18.333 36.583 11.25 41.75 6.25 46.917 1.083 54.333-1 64 0l2 6c-5.333.667-9.25 2.917-11.75 6.75C51.75 16.583 50.5 21 50.5 26H60V45H34z" fill="rgba(114,183,188,0.2)"/>
+            </svg>
+          </div>
+          <blockquote>{t.quote}</blockquote>
           <figcaption>— {t.author}</figcaption>
         </figure>
       ))}
     </div>
+
     <div class="cta-row">
-      <a class="btn-outline" href="/testimonials/">Read More Reviews</a>
+      <a href="/testimonials/" class="btn-reviews">Read More Reviews</a>
     </div>
   </div>
 </section>
@@ -25,32 +32,64 @@ const quotes = site.testimonials;
 <style>
   .testimonials { background: var(--color-accent-wave); }
   .section-header { text-align: center; margin-bottom: 3rem; }
-  .section-header h2 { font-size: 2rem; }
-  .grid {
+  .section-header h2 { font-size: 2rem; color: var(--color-text-main); }
+
+  .testimonial-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
-  .card {
+
+  .testimonial-card {
     background: #fff;
-    border: 1px solid var(--color-border);
+    border-radius: 8px;
     padding: 2rem;
-    border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid rgba(193,219,199,0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
+  .testimonial-card.featured {
+    border-color: var(--color-accent-hover);
+    box-shadow: 0 8px 32px rgba(114,183,188,0.2);
+  }
+
+  .quote-mark { line-height: 0; }
+
   blockquote {
     font-family: var(--font-heading);
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-style: italic;
-    margin-bottom: 1rem;
-    line-height: 1.5;
+    color: var(--color-text-main);
+    line-height: 1.65;
+    flex: 1;
   }
+
   figcaption {
+    font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-accent-hover);
+    letter-spacing: 0.05em;
   }
+
   .cta-row { text-align: center; }
-  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+  .btn-reviews {
+    display: inline-block;
+    border: 2px solid var(--color-accent-hover);
+    color: var(--color-accent-hover);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-reviews:hover { background: var(--color-accent-hover); color: #fff; }
+
+  @media (max-width: 900px) { .testimonial-cards { grid-template-columns: 1fr; } }
 </style>
