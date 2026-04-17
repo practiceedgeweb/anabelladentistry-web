@@ -14,7 +14,16 @@
         { "text": "Smile Gallery", "href": "/smile-gallery/" }
       ]
     },
-    { "text": "Patients", "href": "/patient-information/", "children": [] },
+    {
+      "text": "Patients",
+      "href": "/patient-information/",
+      "children": [
+        { "text": "Schedule Appointment", "href": "/schedule/" },
+        { "text": "Insurance", "href": "/dental-insurance-accepted/" },
+        { "text": "Patient Information", "href": "/patient-information/" },
+        { "text": "FAQs & Information", "href": "/pediatric-dentist-questions/" }
+      ]
+    },
     { "text": "Sleep Apnea", "href": "/sleep-apnea/", "children": [] },
     { "text": "TMJ", "href": "/tmj-treatment/", "children": [] },
     {
