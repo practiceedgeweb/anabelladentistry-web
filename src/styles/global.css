@@ -110,7 +110,7 @@ a { color: inherit; text-decoration: none; }
 }
 .interior-content { flex: 1; min-width: 0; }
 .interior-page .sec { margin-bottom: 2.5rem; }
-.interior-page h1 { font-size: 2rem; color: var(--color-accent-hover); margin-bottom: 1rem; }
+.interior-page h1 { font-size: 2rem; color: var(--color-text-main); margin-bottom: 1.75rem; }
 .interior-page h2 { font-size: 1.5rem; margin: 2rem 0 0.75rem; }
 .interior-page h3 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--color-text-muted); }
 .interior-page h4 { font-size: 1rem; font-weight: 700; margin: 1rem 0 0.4rem; }
