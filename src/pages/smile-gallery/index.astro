@@ -42,19 +42,21 @@ const slides = [
       <button class="gallery-btn prev" id="prevBtn" aria-label="Previous">&#8249;</button>
 
       <div class="slides-wrap">
-        {slides.map((slide, i) => (
-          <div class={`gallery-slide${i === 0 ? ' active' : ''}`} data-index={i}>
-            <div class="slide-inner">
-              <div class="slide-portrait">
-                <img src={slide.portrait.src} alt={slide.portrait.alt} loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
-              </div>
-              <div class="slide-before-after">
-                <img src={slide.before.src} alt={slide.before.alt} loading="lazy" decoding="async" />
-                <img src={slide.after.src}  alt={slide.after.alt}  loading="lazy" decoding="async" />
+        <div class="slides-track" id="slidesTrack">
+          {slides.map((slide, i) => (
+            <div class="gallery-slide" data-index={i}>
+              <div class="slide-inner">
+                <div class="slide-portrait">
+                  <img src={slide.portrait.src} alt={slide.portrait.alt} loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+                </div>
+                <div class="slide-before-after">
+                  <img src={slide.before.src} alt={slide.before.alt} loading="lazy" decoding="async" />
+                  <img src={slide.after.src}  alt={slide.after.alt}  loading="lazy" decoding="async" />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       <button class="gallery-btn next" id="nextBtn" aria-label="Next">&#8250;</button>
@@ -93,27 +95,34 @@ const slides = [
   .slides-wrap {
     flex: 1;
     overflow: hidden;
-    position: relative;
   }
 
-  /* Slides */
-  .gallery-slide {
-    display: none;
+  /* Track slides horizontally — translateX controls which is visible */
+  .slides-track {
+    display: flex;
+    transition: transform 0.4s ease;
   }
-  .gallery-slide.active {
-    display: block;
+
+  .gallery-slide {
+    flex: 0 0 100%;
+    width: 100%;
   }
 
   .slide-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6px;
+    height: 480px;
   }
 
+  .slide-portrait {
+    overflow: hidden;
+  }
   .slide-portrait img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
     display: block;
   }
 
@@ -121,13 +130,14 @@ const slides = [
     display: flex;
     flex-direction: column;
     gap: 6px;
+    overflow: hidden;
   }
   .slide-before-after img {
     width: 100%;
-    height: calc(50% - 3px);
+    flex: 1;
+    min-height: 0;
     object-fit: cover;
     display: block;
-    flex: 1;
   }
 
   /* Arrow buttons */
@@ -163,20 +173,21 @@ const slides = [
   }
 
   @media (max-width: 700px) {
-    .slide-inner { grid-template-columns: 1fr; }
+    .slide-inner { grid-template-columns: 1fr; height: auto; }
+    .slide-portrait img { height: 300px; }
+    .slide-before-after img { height: 180px; flex: none; }
     .gallery-btn { width: 36px; font-size: 1.5rem; }
   }
 </style>
 
 <script>
-  const slides = document.querySelectorAll<HTMLElement>('.gallery-slide');
-  const total = slides.length;
+  const track = document.getElementById('slidesTrack') as HTMLElement;
+  const total = track.children.length;
   let current = 0;
 
   function show(idx: number) {
-    slides[current].classList.remove('active');
     current = (idx + total) % total;
-    slides[current].classList.add('active');
+    track.style.transform = `translateX(-${current * 100}%)`;
   }
 
   document.getElementById('prevBtn')!.addEventListener('click', () => show(current - 1));
