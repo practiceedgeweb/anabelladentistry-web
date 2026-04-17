@@ -5,11 +5,8 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { DATA, DATA_PAGES, SRC_PAGES, routeFromSlug } from './config.mjs';
+import { DATA_PAGES, SRC_PAGES, routeFromSlug } from './config.mjs';
 
-const siteJson = JSON.parse(
-  await fs.readFile(path.join(DATA, 'site.json'), 'utf8').catch(() => '{}'),
-);
 
 function escape(str = '') {
   return String(str).replace(/`/g, '\\`').replace(/\$/g, '\\$');
@@ -77,6 +74,7 @@ const files = (await fs.readdir(DATA_PAGES)).filter((f) => f.endsWith('.json'));
 let generated = 0;
 for (const f of files) {
   const page = JSON.parse(await fs.readFile(path.join(DATA_PAGES, f), 'utf8'));
+  if (!page.sections || page.sections.length === 0) continue;
   const route = routeFromSlug(page.slug);
   const outDir =
     route === ''

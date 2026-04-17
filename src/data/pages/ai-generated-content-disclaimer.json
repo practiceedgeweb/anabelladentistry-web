@@ -1,0 +1,42 @@
+{
+  "slug": "ai-generated-content-disclaimer",
+  "route": "/ai-generated-content-disclaimer/",
+  "meta": {
+    "title": "AI-Generated Content Disclaimer",
+    "description": "While we strive for accuracy and usefulness, AI-generated content may contain errors, omissions, or reflect outdated information.",
+    "canonical": "https://www.anabelladentistry.com/ai-generated-content-disclaimer/",
+    "ogImage": "",
+    "jsonLd": [
+      "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/ai-generated-content-disclaimer\\/\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/ai-generated-content-disclaimer\\/\",\"name\":\"AI-Generated Content Disclaimer\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\"},\"datePublished\":\"2026-02-09T16:29:52+00:00\",\"dateModified\":\"2026-02-09T16:42:41+00:00\",\"description\":\"While we strive for accuracy and usefulness, AI-generated content may contain errors, omissions, or reflect outdated information.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/ai-generated-content-disclaimer\\/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/www.anabelladentistry.com\\/ai-generated-content-disclaimer\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/ai-generated-content-disclaimer\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.anabelladentistry.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"AI Generated Content Disclaimer\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/\",\"name\":\"AnaBella Family and Cosmetic Dentistry\",\"description\":\"Dentist in Bellevue WA\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.anabelladentistry.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"}]}"
+    ]
+  },
+  "breadcrumbs": [],
+  "sections": [
+    {
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "AI-Generated Content Disclaimer"
+        }
+      ],
+      "paragraphs": [
+        "Some of the content on this website may be created or assisted by artificial intelligence (“AI”) tools. While we strive for accuracy and usefulness, AI-generated content may contain errors, omissions, or reflect outdated information.",
+        "This content is provided for informational purposes only and should not be considered professional advice (including legal, medical, or financial advice). You should not rely solely on AI-generated content and are encouraged to verify information independently or consult a qualified professional where appropriate.",
+        "PracticeTek does not assume any responsibility or liability for the accuracy, completeness, or usefulness of AI-generated content, or for any actions taken based on such content. We reserve the right to modify, update, or remove AI-generated material at any time without notice."
+      ],
+      "images": [],
+      "ctas": []
+    },
+    {
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "AI-Generated Content Disclaimer"
+        }
+      ],
+      "paragraphs": [],
+      "images": [],
+      "ctas": []
+    }
+  ]
+}

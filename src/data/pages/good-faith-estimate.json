@@ -1,0 +1,44 @@
+{
+  "slug": "good-faith-estimate",
+  "route": "/good-faith-estimate/",
+  "meta": {
+    "title": "Good Faith Estimate - AnaBella Family and Cosmetic Dentistry",
+    "description": "You have the right to receive a \"Good Faith Estimate\" explaining how much your medical care will cost Give us a call with any questions.",
+    "canonical": "https://www.anabelladentistry.com/good-faith-estimate/",
+    "ogImage": "",
+    "jsonLd": [
+      "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/good-faith-estimate\\/\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/good-faith-estimate\\/\",\"name\":\"Good Faith Estimate - AnaBella Family and Cosmetic Dentistry\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\"},\"datePublished\":\"2026-02-09T16:29:52+00:00\",\"dateModified\":\"2026-02-09T16:42:29+00:00\",\"description\":\"You have the right to receive a \\\"Good Faith Estimate\\\" explaining how much your medical care will cost Give us a call with any questions.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/good-faith-estimate\\/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/www.anabelladentistry.com\\/good-faith-estimate\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/good-faith-estimate\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.anabelladentistry.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Good Faith Estimate\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/\",\"name\":\"AnaBella Family and Cosmetic Dentistry\",\"description\":\"Dentist in Bellevue WA\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.anabelladentistry.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"}]}"
+    ]
+  },
+  "breadcrumbs": [],
+  "sections": [
+    {
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Good Faith Estimate"
+        }
+      ],
+      "paragraphs": [
+        "You have the right to receive a \"Good Faith Estimate\" explaining how much your medical care will cost Under the law, health care providers need to give patients who don't have insurance or who are not using insurance an estimate of the bill for medical items and services.",
+        "For questions or more information about your right to a Good Faith Estimate, visit www.cms.gov/nosurprises.."
+      ],
+      "images": [],
+      "ctas": []
+    },
+    {
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Good Faith Estimate"
+        }
+      ],
+      "paragraphs": [
+        "You have the right to receive a \"Good Faith Estimate\" explaining how much your medical care will cost Under the law, health care providers need to give patients who don't have insurance or who are not using insurance an estimate of the bill for medical items and services.",
+        "For questions or more information about your right to a Good Faith Estimate, visit www.cms.gov/nosurprises.."
+      ],
+      "images": [],
+      "ctas": []
+    }
+  ]
+}

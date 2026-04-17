@@ -1,0 +1,109 @@
+{
+  "slug": "patient-information",
+  "route": "/patient-information/",
+  "meta": {
+    "title": "Patient Information for AnaBella Family and Cosmetic Dentistry",
+    "description": "Download your new patient paperwork today. Or read about our financial and insurance policies. We are here to help.",
+    "canonical": "https://www.anabelladentistry.com/patient-information/",
+    "ogImage": "http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-professional-staff-smiling.jpg",
+    "jsonLd": [
+      "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/patient-information\\/\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/patient-information\\/\",\"name\":\"Patient Information for AnaBella Family and Cosmetic Dentistry\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\"},\"primaryImageOfPage\":\"http:\\/\\/www.dental.inceptionimages.com\\/wp-content\\/uploads\\/2017\\/01\\/woman-professional-staff-smiling.jpg\",\"image\":[\"http:\\/\\/www.dental.inceptionimages.com\\/wp-content\\/uploads\\/2017\\/01\\/woman-professional-staff-smiling.jpg\"],\"thumbnailUrl\":\"http:\\/\\/www.dental.inceptionimages.com\\/wp-content\\/uploads\\/2017\\/01\\/woman-professional-staff-smiling.jpg\",\"datePublished\":\"2026-02-09T16:29:52+00:00\",\"dateModified\":\"2026-02-09T17:42:45+00:00\",\"description\":\"Download your new patient paperwork today. Or read about our financial and insurance policies. We are here to help.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/patient-information\\/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/www.anabelladentistry.com\\/patient-information\\/\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/patient-information\\/#primaryimage\",\"url\":\"http:\\/\\/www.dental.inceptionimages.com\\/wp-content\\/uploads\\/2017\\/01\\/woman-professional-staff-smiling.jpg\",\"contentUrl\":\"http:\\/\\/www.dental.inceptionimages.com\\/wp-content\\/uploads\\/2017\\/01\\/woman-professional-staff-smiling.jpg\",\"width\":\"1100\",\"height\":\"320\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/patient-information\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.anabelladentistry.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Patient Information\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/\",\"name\":\"AnaBella Family and Cosmetic Dentistry\",\"description\":\"Dentist in Bellevue WA\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.anabelladentistry.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"}]}",
+      "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ImageObject\",\"@id\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-professional-staff-smiling.jpg\",\"url\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-professional-staff-smiling.jpg\",\"contentUrl\":\"http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/woman-professional-staff-smiling.jpg\",\"mainEntityOfPage\":\"https://www.anabelladentistry.com/patient-information/\"}]}"
+    ]
+  },
+  "breadcrumbs": [],
+  "sections": [
+    {
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Patient Information"
+        },
+        {
+          "tag": "h3",
+          "text": "New Patient Paperwork"
+        },
+        {
+          "tag": "h3",
+          "text": "Financial Policy"
+        },
+        {
+          "tag": "h3",
+          "text": "Insurance Information"
+        }
+      ],
+      "paragraphs": [
+        "AnaBella Family and Cosmetic Dentistry offers our patient form(s) online so they can be completed in the convenience of your own home or office.",
+        "Patient Registration",
+        "Click to Download",
+        "Health History Form",
+        "Click to Download",
+        "Financial Agreement",
+        "Click to Download",
+        "We firmly believe that financial considerations should not be an obstacle to obtaining the treatment you desire. We are sensitive to the fact that each patient has different needs and have several payment options available so that treatment is accessible to everyone. All financial discussions and arrangements are kept strictly confidential.",
+        "Dental insurance is diverse. Some policies cover only a small percentage of fees, while others cover 50 percent or greater. The more you or your employer pays for premiums, the better the coverage, in most cases. Dental insurance can be confusing, but we'll make it easy for you. Simply bring your card or claim into our office. We'll be happy to tell you what your insurance will cover and file your claim for you.",
+        "AnaBella Family and Cosmetic Dentistry\n11216 NE 15th St Suite A\nBellevue WA 98004\n(425) 454-3221",
+        "Monday\n9:00am - 5:00pm",
+        "Tuesday\n9:00am - 5:00pm",
+        "Wednesday\n9:00am - 5:00pm",
+        "Thursday\n7:00am - 3:30pm"
+      ],
+      "images": [
+        {
+          "src": "data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E",
+          "alt": "Patient Information"
+        },
+        {
+          "src": "data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E",
+          "alt": "Dentist-Near-Me-New-Patient-Special.webp"
+        }
+      ],
+      "ctas": []
+    },
+    {
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Patient Information"
+        }
+      ],
+      "paragraphs": [],
+      "images": [
+        {
+          "src": "data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E",
+          "alt": "Patient Information"
+        }
+      ],
+      "ctas": []
+    },
+    {
+      "headings": [
+        {
+          "tag": "h3",
+          "text": "New Patient Paperwork"
+        },
+        {
+          "tag": "h3",
+          "text": "Financial Policy"
+        },
+        {
+          "tag": "h3",
+          "text": "Insurance Information"
+        }
+      ],
+      "paragraphs": [
+        "AnaBella Family and Cosmetic Dentistry offers our patient form(s) online so they can be completed in the convenience of your own home or office.",
+        "Patient Registration",
+        "Click to Download",
+        "Health History Form",
+        "Click to Download",
+        "Financial Agreement",
+        "Click to Download",
+        "We firmly believe that financial considerations should not be an obstacle to obtaining the treatment you desire. We are sensitive to the fact that each patient has different needs and have several payment options available so that treatment is accessible to everyone. All financial discussions and arrangements are kept strictly confidential.",
+        "Dental insurance is diverse. Some policies cover only a small percentage of fees, while others cover 50 percent or greater. The more you or your employer pays for premiums, the better the coverage, in most cases. Dental insurance can be confusing, but we'll make it easy for you. Simply bring your card or claim into our office. We'll be happy to tell you what your insurance will cover and file your claim for you."
+      ],
+      "images": [],
+      "ctas": []
+    }
+  ]
+}

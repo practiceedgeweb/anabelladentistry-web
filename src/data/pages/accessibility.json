@@ -1,0 +1,115 @@
+{
+  "slug": "accessibility",
+  "route": "/accessibility/",
+  "meta": {
+    "title": "Accessibility - AnaBella Family and Cosmetic Dentistry",
+    "description": "This is the website Accessibility Policy for AnaBella Family and Cosmetic Dentistry. Give us a call with any questions you have.",
+    "canonical": "https://www.anabelladentistry.com/accessibility/",
+    "ogImage": "",
+    "jsonLd": [
+      "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/accessibility\\/\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/accessibility\\/\",\"name\":\"Accessibility - AnaBella Family and Cosmetic Dentistry\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\"},\"datePublished\":\"2026-02-09T16:29:52+00:00\",\"dateModified\":\"2026-02-09T16:42:02+00:00\",\"description\":\"This is the website Accessibility Policy for AnaBella Family and Cosmetic Dentistry. Give us a call with any questions you have.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/accessibility\\/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/www.anabelladentistry.com\\/accessibility\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/accessibility\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.anabelladentistry.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Accessibility\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/\",\"name\":\"AnaBella Family and Cosmetic Dentistry\",\"description\":\"Dentist in Bellevue WA\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.anabelladentistry.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"}]}"
+    ]
+  },
+  "breadcrumbs": [],
+  "sections": [
+    {
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Accessibility Statement"
+        },
+        {
+          "tag": "h3",
+          "text": "UPDATED: June 2025"
+        },
+        {
+          "tag": "h3",
+          "text": "General"
+        },
+        {
+          "tag": "h3",
+          "text": "Accessibility"
+        },
+        {
+          "tag": "h3",
+          "text": "Enabling the Accessibility Menu"
+        },
+        {
+          "tag": "h3",
+          "text": "Disclaimer"
+        },
+        {
+          "tag": "h3",
+          "text": "Here For You"
+        },
+        {
+          "tag": "h3",
+          "text": "Contact Us"
+        }
+      ],
+      "paragraphs": [
+        "AnaBella Family and Cosmetic Dentistry is committed to ensuring digital accessibility for people with disabilities. We are actively working to improve the usability of our websites to ensure that our content is accessible in compliance with applicable laws, including the Americans with Disabilities Act (ADA), California’s Unruh Civil Rights Act, Section 508 of the Rehabilitation Act, and the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. We believe in equal access to online services and information, with the strong belief that every person deserves access to online content with dignity, equality, comfort and independence.",
+        "We make available the UserWay Website Accessibility Widget, powered by a dedicated accessibility server. This widget provides an accessible interface that allows users to adjust visual elements like text size, contrast, and screen reader compatibility.",
+        "The accessibility menu can be enabled by clicking the accessibility menu icon that appears on the corner of the page. After triggering the accessibility menu, please wait a moment for the accessibility menu to load in its entirety.",
+        "We understand that accessibility is an ongoing process. While we strive to make all pages and content on www.anabelladentistry.com fully accessible, some content may not yet meet the highest accessibility standards. We continue to assess and update our digital properties to ensure an inclusive experience for all users.",
+        "If you experience difficulty accessing any part of this website or require assistance, please contact us. We are happy to help during regular business hours.",
+        "If you wish to report an accessibility issue, have any questions or need assistance, please contact AnaBella Family and Cosmetic Dentistry Customer Support."
+      ],
+      "images": [],
+      "ctas": []
+    },
+    {
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Accessibility Statement"
+        }
+      ],
+      "paragraphs": [],
+      "images": [],
+      "ctas": []
+    },
+    {
+      "headings": [
+        {
+          "tag": "h3",
+          "text": "UPDATED: June 2025"
+        },
+        {
+          "tag": "h3",
+          "text": "General"
+        },
+        {
+          "tag": "h3",
+          "text": "Accessibility"
+        },
+        {
+          "tag": "h3",
+          "text": "Enabling the Accessibility Menu"
+        },
+        {
+          "tag": "h3",
+          "text": "Disclaimer"
+        },
+        {
+          "tag": "h3",
+          "text": "Here For You"
+        },
+        {
+          "tag": "h3",
+          "text": "Contact Us"
+        }
+      ],
+      "paragraphs": [
+        "AnaBella Family and Cosmetic Dentistry is committed to ensuring digital accessibility for people with disabilities. We are actively working to improve the usability of our websites to ensure that our content is accessible in compliance with applicable laws, including the Americans with Disabilities Act (ADA), California’s Unruh Civil Rights Act, Section 508 of the Rehabilitation Act, and the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. We believe in equal access to online services and information, with the strong belief that every person deserves access to online content with dignity, equality, comfort and independence.",
+        "We make available the UserWay Website Accessibility Widget, powered by a dedicated accessibility server. This widget provides an accessible interface that allows users to adjust visual elements like text size, contrast, and screen reader compatibility.",
+        "The accessibility menu can be enabled by clicking the accessibility menu icon that appears on the corner of the page. After triggering the accessibility menu, please wait a moment for the accessibility menu to load in its entirety.",
+        "We understand that accessibility is an ongoing process. While we strive to make all pages and content on www.anabelladentistry.com fully accessible, some content may not yet meet the highest accessibility standards. We continue to assess and update our digital properties to ensure an inclusive experience for all users.",
+        "If you experience difficulty accessing any part of this website or require assistance, please contact us. We are happy to help during regular business hours.",
+        "If you wish to report an accessibility issue, have any questions or need assistance, please contact AnaBella Family and Cosmetic Dentistry Customer Support."
+      ],
+      "images": [],
+      "ctas": []
+    }
+  ]
+}
