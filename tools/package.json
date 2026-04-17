@@ -1,0 +1,23 @@
+{
+  "name": "anabelladentistry-migration-tools",
+  "private": true,
+  "type": "module",
+  "description": "Scrape + extract + generate pipeline for mirroring anabelladentistry.com",
+  "scripts": {
+    "migrate:crawl": "node crawl.mjs",
+    "migrate:assets": "node download-assets.mjs",
+    "migrate:extract": "node extract.mjs",
+    "migrate:generate": "node generate.mjs",
+    "migrate:verify": "node verify.mjs",
+    "migrate:all": "npm run migrate:crawl && npm run migrate:assets && npm run migrate:extract && npm run migrate:generate"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "p-limit": "^6.1.0",
+    "pixelmatch": "^6.0.0",
+    "playwright": "^1.47.0",
+    "pngjs": "^7.0.0",
+    "sharp": "^0.33.5",
+    "undici": "^6.19.8"
+  }
+}

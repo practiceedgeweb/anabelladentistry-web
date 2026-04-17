@@ -1,123 +1,82 @@
 ---
-const services = [
-  { 
-    title: "DENTAL EXAMS", 
-    image: "https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-Dental-Checkup-Woman.webp" 
-  },
-  { 
-    title: "TOOTH PAIN", 
-    image: "https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-Tooth-Sensitivity.webp" 
-  },
-  { 
-    title: "DENTAL CLEANINGS", 
-    image: "https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-Dental-Cleaning.webp" 
-  },
-  { 
-    title: "COSMETIC DENTISTRY", 
-    image: "https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-Cosmetic-Services.webp" 
-  }
-];
+import home from '../data/pages/home.json';
+const services = home.services;
 ---
 <section id="services" class="services section">
   <div class="container">
     <div class="section-header">
-      <h2>DENTIST BELLEVUE WA</h2>
-      <p>Luxury care meets clinical excellence. Discover our boutique approach to your oral health.</p>
+      <span class="sub-label">Our Services</span>
+      <h2>Comprehensive Dental Care, Bellevue WA</h2>
     </div>
-    
-    <div class="service-grid">
-      {services.map(service => (
-        <div class="service-card">
-          <div class="service-img-wrapper">
-            <img src={service.image} alt={service.title} />
+    <div class="grid">
+      {services.map((s) => (
+        <a class="card" href={s.href}>
+          <div class="img-wrap">
+            <img
+              src={`/assets/2025/10/${s.image.split('/').pop()}`}
+              onerror={`this.onerror=null;this.src='${s.image}';`}
+              alt={s.alt}
+              loading="lazy"
+              decoding="async"
+              width="600"
+              height="400"
+            />
           </div>
-          <h3>{service.title}</h3>
-          <a href="#" class="btn-outline-small">View Service</a>
-        </div>
+          <h3>{s.title}</h3>
+          <span class="arrow">Learn more →</span>
+        </a>
       ))}
-    </div>
-
-    <!-- Niche Specialties (Sleep Apnea & TMJ) -->
-    <div class="specialties-grid">
-      <div class="specialty-card">
-        <h3>SLEEP APNEA</h3>
-        <p>Do you wake up feeling tired? We provide dental solutions for sleep apnea and snoring.</p>
-        <a href="#">Learn About Sleep Apnea →</a>
-      </div>
-      <div class="specialty-card">
-        <h3>TMJ THERAPY</h3>
-        <p>Relieve jaw pain and headaches with our advanced neuromuscular dentistry treatments.</p>
-        <a href="#">Explore TMJ Solutions →</a>
-      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .section { padding: 6rem 0; }
-  .section-header { text-align: center; margin-bottom: 4rem; }
-  .section-header h2 { font-size: 0.875rem; letter-spacing: 0.3em; color: var(--color-gold); margin-bottom: 1rem; }
-  .section-header p { font-size: 2rem; max-width: 800px; margin: 0 auto; line-height: 1.3; }
-  
-  .service-grid {
+  .services { background: #fff; }
+  .section-header { text-align: center; margin-bottom: 3rem; }
+  .section-header h2 { font-size: 2rem; }
+  .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
-    margin-bottom: 4rem;
   }
-  .service-card {
-    background: white;
+  .card {
+    background: #fff;
     border: 1px solid var(--color-border);
-    text-align: center;
-    transition: all 0.3s ease;
-    padding-bottom: 2rem;
-  }
-  .service-card:hover { border-color: var(--color-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-  
-  .service-img-wrapper {
-    width: 100%;
-    height: 200px;
+    border-radius: 6px;
     overflow: hidden;
-    margin-bottom: 1.5rem;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
   }
-  .service-img-wrapper img {
+  .card:hover {
+    border-color: var(--color-accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  }
+  .img-wrap {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+  }
+  .img-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
-  .service-card:hover .service-img-wrapper img {
-    transform: scale(1.05);
+  .card:hover .img-wrap img { transform: scale(1.05); }
+  .card h3 {
+    margin: 1rem 1.25rem 0.25rem;
+    font-size: 1.15rem;
   }
-  .service-card h3 { font-size: 1rem; letter-spacing: 0.1em; margin-bottom: 1.5rem; }
-  
-  .specialties-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-  .specialty-card {
-    background: var(--color-bg-warm);
-    padding: 4rem;
-    border-radius: 4px;
-  }
-  .specialty-card h3 { font-size: 1.5rem; letter-spacing: 0.1em; margin-bottom: 1rem; }
-  .specialty-card p { margin-bottom: 2rem; color: var(--color-text-muted); }
-  .specialty-card a { color: var(--color-gold); font-weight: 700; text-decoration: none; }
-
-  .btn-outline-small {
-    display: inline-block;
-    padding: 0.5rem 1.5rem;
-    border: 1px solid var(--color-gold);
-    color: var(--color-gold);
-    font-size: 0.75rem;
+  .arrow {
+    margin: 0 1.25rem 1.25rem;
+    color: var(--color-accent-hover);
+    font-size: 0.85rem;
     font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
   }
-  
-  @media (max-width: 992px) {
-    .service-grid { grid-template-columns: repeat(2, 1fr); }
-    .specialties-grid { grid-template-columns: 1fr; }
-  }
+
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .grid { grid-template-columns: 1fr; } }
 </style>

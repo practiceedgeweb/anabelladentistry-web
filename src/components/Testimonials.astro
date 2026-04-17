@@ -1,0 +1,56 @@
+---
+import site from '../data/site.json';
+const quotes = site.testimonials;
+---
+<section class="testimonials section">
+  <div class="container">
+    <div class="section-header">
+      <span class="sub-label">What Our Patients Say</span>
+      <h2>Trusted by Bellevue Families</h2>
+    </div>
+    <div class="grid">
+      {quotes.map((t) => (
+        <figure class="card">
+          <blockquote>{`\u201C${t.quote}\u201D`}</blockquote>
+          <figcaption>— {t.author}</figcaption>
+        </figure>
+      ))}
+    </div>
+    <div class="cta-row">
+      <a class="btn-outline" href="/testimonials/">Read More Reviews</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials { background: var(--color-accent-wave); }
+  .section-header { text-align: center; margin-bottom: 3rem; }
+  .section-header h2 { font-size: 2rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    padding: 2rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  }
+  blockquote {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  figcaption {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--color-accent-hover);
+  }
+  .cta-row { text-align: center; }
+  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+</style>

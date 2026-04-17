@@ -1,128 +1,85 @@
 ---
+import site from '../data/site.json';
 ---
-<header class="header">
-  <div class="header-top">
+<header class="site-header">
+  <div class="top-bar">
     <div class="container top-inner">
-      <span>(425) 454-3221</span>
+      <a href={`tel:${site.contact.phoneTel}`} class="phone">{site.contact.phone}</a>
       <div class="top-actions">
         <a href="/accessibility/">Accessibility</a>
-        <a href="/hipaa-privacy-policy/">Hipaa Policy</a>
+        <a href="/hipaa-privacy-policy/">HIPAA Policy</a>
         <a href="/special/" class="top-btn">New Patient Special</a>
       </div>
     </div>
   </div>
   <div class="header-main">
     <div class="container main-inner">
-      <a href="/" class="logo">
-        <img src="https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-AnaBella-Family-and-Cosmetic-Dentistry-Header-Logo.webp" alt="AnaBella Family & Cosmetic Dentistry" />
+      <a href="/" class="logo" aria-label="AnaBella Family and Cosmetic Dentistry home">
+        <img
+          src="/assets/2025/10/Dentist-Bellevue-WA-AnaBella-Family-and-Cosmetic-Dentistry-Header-Logo.webp"
+          onerror="this.onerror=null;this.src='https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-AnaBella-Family-and-Cosmetic-Dentistry-Header-Logo.webp';"
+          alt="AnaBella Family and Cosmetic Dentistry"
+          width="250"
+          height="130"
+        />
       </a>
-      
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <ul class="menu">
-          <li><a href="/">Home</a></li>
-          <li class="has-submenu">
-            <a href="#about">About</a>
-            <ul class="submenu">
-              <li><a href="/about/meet-the-team/">Meet the Team</a></li>
-              <li><a href="/about/testimonials/">Testimonials</a></li>
-              <li><a href="/about/office-tour/">Office Tour</a></li>
-              <li><a href="/about/smile-gallery/">Smile Gallery</a></li>
-            </ul>
-          </li>
-          <li class="has-submenu">
-            <a href="#patients">Patients</a>
-            <ul class="submenu">
-              <li><a href="/patient-info/schedule-appointment/">Schedule Appointment</a></li>
-              <li><a href="/patient-info/insurance/">Insurance</a></li>
-              <li><a href="/patient-info/">Patient Information</a></li>
-              <li><a href="/brushing-guide/">FAQs & Information</a></li>
-            </ul>
-          </li>
-          <li><a href="/sleep-apnea/">Sleep Apnea</a></li>
-          <li><a href="/tmj/">TMJ</a></li>
-          <li class="has-submenu">
-            <a href="#services">Services</a>
-            <div class="submenu mega">
-              <div class="mega-grid">
-                <div class="mega-col">
-                  <strong>General</strong>
-                  <a href="/general/checkups/">Cleanings & Exams</a>
-                  <a href="/general/cavity/">Cavity Treatment</a>
-                </div>
-                <div class="mega-col">
-                  <strong>Cosmetic</strong>
-                  <a href="/cosmetic/veneers/">Veneers</a>
-                  <a href="/cosmetic/whitening/">Teeth Whitening</a>
-                </div>
-                <div class="mega-col">
-                  <strong>Restorative</strong>
-                  <a href="/restorative/implants/">Implants</a>
-                  <a href="/restorative/crowns/">Dental Crowns</a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li><a href="/review-us/">Review Us</a></li>
-          <li><a href="/contact/" class="btn-gold-small">Contact</a></li>
+          {site.nav.map((item) => (
+            <li class={item.children ? 'has-submenu' : ''}>
+              <a href={item.href}>{item.text}</a>
+              {item.children && (
+                <ul class="submenu">
+                  {item.children.map((child) => (
+                    <li><a href={child.href}>{child.text}</a></li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
         </ul>
       </nav>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
     </div>
   </div>
 </header>
 
 <style>
-  .header {
+  .site-header {
     width: 100%;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
+    background: #fff;
   }
 
-  /* Header Top Bar - Matching Australian Top Bar Color */
-  .header-top {
-    background: #808080;
-    padding: 0.5rem 0;
+  .top-bar {
+    background: var(--color-header-bg);
+    color: var(--color-header-text);
     font-size: 0.75rem;
     font-weight: 700;
-    color: white;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 0.5rem 0;
   }
   .top-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .top-actions {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-  }
-  .top-actions a {
-    color: white;
-    text-decoration: none;
-  }
+  .phone { color: var(--color-header-text); letter-spacing: 0.04em; }
+  .top-actions { display: flex; gap: 1.25rem; align-items: center; }
+  .top-actions a { color: var(--color-header-text); text-decoration: none; }
+  .top-actions a:hover { color: var(--color-accent-hover); }
   .top-btn {
-    background: var(--color-gold);
+    background: var(--color-accent-hover);
+    color: #fff !important;
     padding: 4px 12px;
     border-radius: 4px;
   }
 
-  /* Main Header - Matching Freedom Linear Gradient */
-  .header-main {
-    padding: 0.75rem 0;
-    background-image: linear-gradient(to right, var(--color-header-start), var(--color-header-mid), var(--color-header-end));
-  }
-  .main-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo img {
-    height: 65px;
-    width: auto;
-  }
+  .header-main { padding: 1rem 0; border-bottom: 1px solid var(--color-border); }
+  .main-inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+  .logo img { height: 65px; width: auto; display: block; }
 
-  /* Navigation & Menus */
   .menu {
     display: flex;
     list-style: none;
@@ -130,94 +87,60 @@
     align-items: center;
   }
   .menu > li > a {
-    text-decoration: none;
-    color: white;
     font-weight: 700;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    padding: 1.5rem 0;
-    transition: opacity 0.2s ease;
+    color: var(--color-text-main);
+    padding: 1rem 0;
+    transition: color 0.2s ease;
   }
-  .menu li:hover > a {
-    opacity: 0.8;
-  }
+  .menu > li > a:hover { color: var(--color-accent-hover); }
 
-  /* Dropdowns */
-  .has-submenu {
-    position: relative;
-  }
+  .has-submenu { position: relative; }
   .submenu {
     position: absolute;
     top: 100%;
     left: 0;
-    background: white;
-    width: 240px;
+    background: #fff;
+    min-width: 220px;
     list-style: none;
-    padding: 1rem 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    border-top: 3px solid var(--color-gold);
+    padding: 0.5rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border-top: 3px solid var(--color-accent-hover);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
+    transform: translateY(6px);
+    transition: all 0.2s ease;
   }
-  .has-submenu:hover > .submenu {
+  .has-submenu:hover > .submenu,
+  .has-submenu:focus-within > .submenu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
   }
-  .submenu li a, .mega-col a {
+  .submenu li a {
     display: block;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    color: var(--color-text-main) !important;
-    font-size: 0.8125rem;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    text-transform: none;
-    letter-spacing: 0;
+    color: var(--color-text-main);
   }
-  .submenu li a:hover, .mega-col a:hover {
-    background: #f9f7f2;
-    color: var(--color-gold) !important;
-  }
-
-  /* Mega Menu for Services */
-  .mega {
-    width: 600px !important;
-    left: -200px !important;
-  }
-  .mega-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 1rem 2rem;
-  }
-  .mega-col {
-    display: flex;
-    flex-direction: column;
-  }
-  .mega-col strong {
-    display: block;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-gold);
-    margin-bottom: 0.5rem;
-    padding: 0 1.5rem;
-  }
-  .mega-col a {
-    padding: 0.5rem 1.5rem !important;
+  .submenu li a:hover {
+    background: var(--color-bg-warm);
+    color: var(--color-accent-hover);
   }
 
-  .btn-gold-small {
-    background: var(--color-gold);
-    color: white !important;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    text-decoration: none;
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
   }
 
   @media (max-width: 900px) {
     .nav { display: none; }
+    .menu-toggle { display: inline-block; }
   }
 </style>

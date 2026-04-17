@@ -1,0 +1,74 @@
+---
+import site from '../data/site.json';
+---
+<footer class="site-footer">
+  <div class="container inner">
+    <div class="col">
+      <strong>{site.businessName}</strong>
+      <p>
+        {site.contact.address.street}<br>
+        {site.contact.address.city}, {site.contact.address.state} {site.contact.address.zip}
+      </p>
+      <p><a href={`tel:${site.contact.phoneTel}`}>{site.contact.phone}</a></p>
+    </div>
+    <div class="col">
+      <strong>Policies</strong>
+      <ul>
+        {site.footerLinks.map((l) => (
+          <li><a href={l.href}>{l.text}</a></li>
+        ))}
+      </ul>
+    </div>
+    <div class="col">
+      <strong>Visit Us</strong>
+      <ul>
+        <li><a href="/schedule/">Schedule an Appointment</a></li>
+        <li><a href="/dental-insurance-accepted/">Insurance</a></li>
+        <li><a href="/contact-us/">Contact</a></li>
+        <li><a href="/review-us/">Review Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyright">
+    <div class="container">
+      COPYRIGHT © {new Date().getFullYear()} {site.businessName}. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-header-bg);
+    color: var(--color-header-text);
+    margin-top: 4rem;
+  }
+  .inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 3rem 2rem;
+  }
+  .col strong {
+    display: block;
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+  .col ul { list-style: none; }
+  .col li { margin-bottom: 0.45rem; }
+  .col a { color: var(--color-header-text); font-size: 0.9rem; }
+  .col a:hover { color: var(--color-accent-hover); }
+  .copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1rem 0;
+    font-size: 0.75rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  @media (max-width: 700px) {
+    .inner { grid-template-columns: 1fr; }
+  }
+</style>

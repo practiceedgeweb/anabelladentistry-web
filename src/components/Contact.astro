@@ -1,0 +1,78 @@
+---
+import site from '../data/site.json';
+const { contact, hours } = site;
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+---
+<section id="contact" class="contact section">
+  <div class="container grid">
+    <div class="info">
+      <span class="sub-label">Contact Us Today!</span>
+      <h2>{site.businessName}</h2>
+      <address>
+        {contact.address.street}<br>
+        {contact.address.city}, {contact.address.state} {contact.address.zip}
+      </address>
+      <p class="phone-line">
+        <a href={`tel:${contact.phoneTel}`}>{contact.phone}</a>
+      </p>
+      <h3>Office Hours</h3>
+      <ul class="hours">
+        {days.map((d) => (
+          <li><strong>{d}:</strong> <span>{hours[d]}</span></li>
+        ))}
+      </ul>
+      <a href="/schedule/" class="btn-primary">Schedule Appointment</a>
+    </div>
+    <div class="map">
+      <iframe
+        title="Map of AnaBella Family and Cosmetic Dentistry"
+        src={`https://www.google.com/maps?q=${encodeURIComponent(contact.address.street + ', ' + contact.address.city + ', ' + contact.address.state + ' ' + contact.address.zip)}&output=embed`}
+        loading="lazy"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen="false"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact { background: #fff; }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .info h2 { font-size: 1.75rem; margin-bottom: 1rem; }
+  address {
+    font-style: normal;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+  }
+  .phone-line { margin-bottom: 2rem; }
+  .phone-line a {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-accent-hover);
+  }
+  .info h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.75rem;
+  }
+  .hours { list-style: none; margin-bottom: 2rem; }
+  .hours li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--color-border);
+    max-width: 340px;
+  }
+  .map iframe { width: 100%; border-radius: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+</style>

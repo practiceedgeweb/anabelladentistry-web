@@ -1,0 +1,85 @@
+{
+  "slug": "home",
+  "route": "/",
+  "meta": {
+    "title": "Schedule Appointment Today | Dentist Bellevue WA",
+    "description": "Bellevue Dentist, 98004 | AnaBella Family and Cosmetic Dentistry provides dental care in Bellevue WA for all your dental needs.",
+    "canonical": "https://www.anabelladentistry.com/",
+    "ogImage": "https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-Clara-H.-Song-Meet-the-Team.webp"
+  },
+  "hero": {
+    "h1": "Dentist Bellevue WA",
+    "tagline": "Where Healthy Smiles Begin",
+    "subheading": "AnaBella Family and Cosmetic Dentistry",
+    "body": "In our practice, you will discover contemporary dental care designed for your complete satisfaction. We believe that teeth should look great, function properly, and withstand the rigors of daily life. Dr. Clara H. Song and the team at AnaBella Family and Cosmetic Dentistry combine the science of restoring teeth with artistic vision in cosmetic dentistry to produce strong, beautiful smiles.",
+    "secondaryBody": "Our outstanding team is here to help you achieve your smile goals. Contact us today.",
+    "primaryCta": { "text": "New Patient Special", "href": "/special/" },
+    "secondaryCta": { "text": "Meet The Doctor", "href": "/us/" },
+    "image": {
+      "src": "https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-Clara-H.-Song-HP-About.webp",
+      "alt": "Dr. Clara H. Song, dentist at AnaBella Family and Cosmetic Dentistry"
+    }
+  },
+  "scheduleBar": {
+    "label": "Schedule TODAY",
+    "body": "You'll know the moment you arrive that this is the place. We are here to exceed your expectations.",
+    "cta": { "text": "MAKE APPOINTMENT", "href": "/schedule/" }
+  },
+  "services": [
+    {
+      "title": "Dental Exams",
+      "image": "https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-Dental-Checkup-Woman.webp",
+      "alt": "A young woman in a dental exam chair giving a thumbs up",
+      "href": "/dental-exams/"
+    },
+    {
+      "title": "Dental Cavities",
+      "image": "https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-Tooth-Sensitivity.webp",
+      "alt": "A man holding his jaw, indicating tooth pain",
+      "href": "/dental-cavities-solutions/"
+    },
+    {
+      "title": "Dental Cleanings",
+      "image": "https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-Dental-Cleaning.webp",
+      "alt": "A woman smiling while a dentist cleans her teeth",
+      "href": "/dental-cleanings/"
+    },
+    {
+      "title": "Cosmetic Dentistry",
+      "image": "https://www.anabelladentistry.com/wp-content/uploads/2025/10/Dentist-Bellevue-WA-Cosmetic-Services.webp",
+      "alt": "An attractive young woman smiling with straight, white teeth",
+      "href": "/cosmetic-restorative/"
+    }
+  ],
+  "sleepApnea": {
+    "heading": "Sleep Apnea",
+    "body": "Sleep apnea is more than just snoring — it's a serious condition where your breathing repeatedly stops or becomes very shallow while you sleep. Many people with sleep apnea don't even realize it's happening.",
+    "cta": { "text": "CLICK HERE", "href": "/sleep-apnea/" }
+  },
+  "insurance": {
+    "heading": "Dental Insurances We Work With",
+    "body": "We accept most major dental insurances! Call us today at (425) 454-3221 for more details."
+  },
+  "practiceHistory": {
+    "heading": "The History Of Dental Care",
+    "body": "For over three decades, Dr. Clara H. Song and the staff at AnaBella Family and Cosmetic Dentistry have offered comprehensive dental treatment, with a complete range of cosmetic dentistry, restorative dentistry, and general dentistry. Each team member possesses an unwavering dedication to impeccable service and exemplary dental care. Your comfort is our Bellevue WA dentist's top priority, and we have created a friendly, welcoming environment for you to enjoy."
+  },
+  "comfort": {
+    "heading": "Comfort Accommodations",
+    "body": "At AnaBella Family and Cosmetic Dentistry, we take your comfort seriously, which is why we offer oral sedation, anesthesia upon request, blankets, Netflix, sunglasses, pillows, and stress balls for our patients."
+  },
+  "tmj": {
+    "heading": "TMJ Therapy",
+    "body": "If you suffer from regularly occurring headaches or have persistent pain in your jaws, neck, face, or shoulders, you may be suffering from TMJ or Temporomandibular Joint Disorder. While medication or surgery may address the pain, these treatments may not always fix the actual cause of the problem without the understanding and thorough examination of your face and jaw by an experienced neuromuscular dentist.",
+    "cta": { "text": "CLICK HERE", "href": "/tmj-treatment/" }
+  },
+  "training": {
+    "heading": "What Kind Of Training Does A Dentist Have?",
+    "body": "Becoming a dentist isn't just about learning how to fix teeth — it's about mastering a blend of science, art, and people skills. The journey starts with earning a bachelor's degree, usually focused on sciences like biology or chemistry, which lays the foundation for understanding the human body. Then comes dental school, an intense four-year program where students dive into everything from anatomy and oral health to hands-on training with real patients. It's like boot camp for your smile's best advocate, combining book smarts with practical skills to ensure dentists can handle any situation, from routine cleaning to a tricky root canal."
+  },
+  "finalCta": {
+    "prefix": "Ready to find out more?",
+    "title": "New Patient Special Offer",
+    "cta": { "text": "Request an Appointment", "href": "/special/" }
+  }
+}

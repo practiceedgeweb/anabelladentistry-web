@@ -1,0 +1,92 @@
+{
+  "origin": "https://www.anabelladentistry.com",
+  "businessName": "AnaBella Family and Cosmetic Dentistry",
+  "tagline": "Where Healthy Smiles Begin",
+  "doctor": "Dr. Clara H. Song",
+  "contact": {
+    "phone": "(425) 454-3221",
+    "phoneTel": "4254543221",
+    "address": {
+      "street": "11216 NE 15th St Suite A",
+      "city": "Bellevue",
+      "state": "WA",
+      "zip": "98004"
+    },
+    "coords": { "lat": 47.624482, "lng": -122.19014 }
+  },
+  "hours": {
+    "Monday": "9:00am - 5:00pm",
+    "Tuesday": "9:00am - 5:00pm",
+    "Wednesday": "9:00am - 5:00pm",
+    "Thursday": "7:00am - 3:30pm",
+    "Friday": "Closed",
+    "Saturday": "Closed",
+    "Sunday": "Closed"
+  },
+  "nav": [
+    { "text": "Home", "href": "/" },
+    {
+      "text": "About",
+      "href": "#about",
+      "children": [
+        { "text": "Meet the Team", "href": "/us/" },
+        { "text": "Testimonials", "href": "/testimonials/" },
+        { "text": "Office Tour", "href": "/office-tour/" },
+        { "text": "Smile Gallery", "href": "/smile-gallery/" }
+      ]
+    },
+    {
+      "text": "Patients",
+      "href": "#patients",
+      "children": [
+        { "text": "Schedule Appointment", "href": "/schedule/" },
+        { "text": "Insurance", "href": "/dental-insurance-accepted/" },
+        { "text": "Patient Information", "href": "/patient-information/" },
+        { "text": "FAQs & Information", "href": "/how-to-brush-your-teeth/" }
+      ]
+    },
+    { "text": "Sleep Apnea", "href": "/sleep-apnea/" },
+    { "text": "TMJ", "href": "/tmj-treatment/" },
+    {
+      "text": "Services",
+      "href": "#services",
+      "children": [
+        { "text": "General", "href": "/general-dentistry-services/" },
+        { "text": "Cosmetic", "href": "/cosmetic-dentistry-focused/" },
+        { "text": "Family Dentistry", "href": "/family-dentistry-focused/" },
+        { "text": "Emergency", "href": "/emergency-dental-information/" },
+        { "text": "Preventative", "href": "/preventative/" },
+        { "text": "Restorative — Crowns", "href": "/dental-crowns-focused/" },
+        { "text": "Restorative — Bridges", "href": "/dental-bridges/" },
+        { "text": "Restorative — Implants", "href": "/dental-implants/" }
+      ]
+    },
+    { "text": "Review Us", "href": "/review-us/" },
+    { "text": "Contact", "href": "/contact-us/" }
+  ],
+  "footerLinks": [
+    { "text": "Accessibility", "href": "/accessibility/" },
+    { "text": "Anti-Discrimination", "href": "/anti-discrimination/" },
+    { "text": "Healthcare Disclaimer", "href": "/healthcare-disclaimer/" },
+    { "text": "HIPAA Privacy Policy", "href": "/hipaa-privacy-policy/" },
+    { "text": "Privacy Policy", "href": "/privacy-policy/" },
+    { "text": "Terms of Service", "href": "/terms-service/" },
+    { "text": "Good Faith Estimate", "href": "/good-faith-estimate/" },
+    { "text": "AI Generated Content Disclaimer", "href": "/ai-generated-content-disclaimer/" }
+  ],
+  "testimonials": [
+    {
+      "quote": "Easy to make appointment. Professional doctor and friendly staff. Highly recommend this clinic.",
+      "author": "Nut L."
+    },
+    {
+      "quote": "I actually like going to my dentist. Highly recommend this place.",
+      "author": "Ali J."
+    },
+    {
+      "quote": "Professional doctor. Very lovely and relaxing atmosphere.",
+      "author": "B Picha S."
+    }
+  ],
+  "zocdocUrl": "https://www.zocdoc.com/practice/anabella-family-and-cosmetic-dentistry-12212?lock=true&isNewPatient=false&referrerType=widget"
+}

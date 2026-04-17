@@ -1,46 +1,53 @@
+/*
+ * Design tokens sourced from anabelladentistry.com BeaverBuilder theme CSS vars.
+ * See tools/snapshot/home.html — :root { --fl-accent, --fl-header-bg, ... }.
+ */
 :root {
-  /* Anabella Exact Technical Palette */
-  --color-gold: #C5A059;
-  
-  /* The "Sage/Blue-Grey" Gradient from their CSS */
-  --color-header-start: #aebcd1;
-  --color-header-mid: #536d92;
-  --color-header-end: #aebcd1;
-  
-  --color-text-main: #333333;
-  --color-text-muted: #666666;
-  --color-white: #ffffff;
-  --color-border: #eceae4;
+  /* Core palette — verbatim from live site */
+  --color-text-main: #424242;
+  --color-text-muted: #666;
+  --color-body-bg: #ffffff;
 
-  /* Exact Typography Found */
+  --color-accent: #c1dbc7;          /* soft sage/teal (primary) */
+  --color-accent-alt: #dae9dd;      /* slightly deeper sage */
+  --color-accent-wave: #E9F2EB;     /* wave separator fill */
+  --color-accent-hover: #72b7bc;    /* teal hover on nav links */
+
+  --color-header-bg: #333333;       /* dark charcoal nav */
+  --color-header-text: #ededed;     /* off-white nav text */
+
+  --color-border: #eceae4;
+  --color-bg-warm: #f7f5ee;         /* was referenced but undefined in v1 */
+
+  /* Typography */
   --font-heading: 'Raleway', sans-serif;
   --font-body: 'Lato', sans-serif;
-  
-  /* Spacing */
+
+  /* Layout */
   --container-width: 1200px;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-text-main);
-  background-color: var(--color-white);
+  background: var(--color-body-bg);
   scroll-behavior: smooth;
 }
 
-h1, h2, h3 {
+body { min-height: 100vh; }
+
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
   color: var(--color-text-main);
 }
+
+a { color: inherit; text-decoration: none; }
 
 .container {
   max-width: var(--container-width);
@@ -48,19 +55,48 @@ h1, h2, h3 {
   padding: 0 2rem;
 }
 
-.btn-gold {
+.btn-primary {
   display: inline-block;
-  background-color: var(--color-gold);
-  color: white;
-  padding: 1rem 2rem;
+  background: var(--color-accent-hover);
+  color: #fff;
+  padding: 0.9rem 1.8rem;
   border-radius: 4px;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  text-decoration: none;
+  font-size: 0.8125rem;
   transition: background 0.2s ease;
 }
+.btn-primary:hover { background: #5fa2a7; }
 
-.btn-gold:hover {
-  background-color: #b08e4a;
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-text-main);
+  padding: 0.9rem 1.8rem;
+  border: 2px solid var(--color-text-main);
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  transition: all 0.2s ease;
+}
+.btn-outline:hover { background: var(--color-text-main); color: #fff; }
+
+.section { padding: 5rem 0; }
+.section-tight { padding: 3rem 0; }
+
+.sub-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--color-accent-hover);
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .section { padding: 3rem 0; }
 }
