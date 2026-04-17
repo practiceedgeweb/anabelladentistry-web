@@ -11,22 +11,14 @@ const meta = {
 
 const BASE = "/assets/2025/10";
 
+// Each image is a pre-composed composite (portrait left + before/after right)
 const slides = [
-  {
-    portrait: { src: `${BASE}/Dentist-Bellevue-WA-Bride.webp`,                   alt: "Patient smile result" },
-    before:   { src: `${BASE}/Dentist-Bellevue-WA-Broken-Teeth.webp`,             alt: "Before dental treatment" },
-    after:    { src: `${BASE}/Dentist-Bellevue-WA-White-Teeth.webp`,              alt: "After dental treatment" },
-  },
-  {
-    portrait: { src: `${BASE}/Dentist-Bellevue-WA-Veneers.webp`,                  alt: "Veneers result" },
-    before:   { src: `${BASE}/Dentist-Bellevue-WA-Teeth-Whitening.webp`,          alt: "Before teeth whitening" },
-    after:    { src: `${BASE}/Dentist-Bellevue-WA-Straighter-Whiter-Teeth.webp`,  alt: "After teeth whitening" },
-  },
-  {
-    portrait: { src: `${BASE}/Dentist-Bellevue-WA-Even-Teeth.webp`,               alt: "Even teeth result" },
-    before:   { src: `${BASE}/Dentist-Bellevue-WA-Tooth-and-Gum-Restoration.webp`, alt: "Before gum restoration" },
-    after:    { src: `${BASE}/Dentist-Bellevue-WA-Straighter-Whiter-Teeth.webp`,  alt: "After gum restoration" },
-  },
+  { src: `${BASE}/Dentist-Bellevue-WA-Teeth-Whitening.webp`,        alt: "Patient smile transformation — teeth whitening result" },
+  { src: `${BASE}/Dentist-Bellevue-WA-White-Teeth.webp`,            alt: "Patient smile transformation — white teeth result" },
+  { src: `${BASE}/Dentist-Bellevue-WA-Bride.webp`,                  alt: "Bride smile transformation result" },
+  { src: `${BASE}/Dentist-Bellevue-WA-Veneers.webp`,                alt: "Patient smile transformation — veneers result" },
+  { src: `${BASE}/Dentist-Bellevue-WA-Even-Teeth.webp`,             alt: "Patient smile transformation — even teeth result" },
+  { src: `${BASE}/Dentist-Bellevue-WA-Straighter-Whiter-Teeth.webp`, alt: "Patient smile transformation — straighter whiter teeth" },
 ];
 ---
 
@@ -44,16 +36,13 @@ const slides = [
       <div class="slides-wrap">
         <div class="slides-track" id="slidesTrack">
           {slides.map((slide, i) => (
-            <div class="gallery-slide" data-index={i}>
-              <div class="slide-inner">
-                <div class="slide-portrait">
-                  <img src={slide.portrait.src} alt={slide.portrait.alt} loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
-                </div>
-                <div class="slide-before-after">
-                  <img src={slide.before.src} alt={slide.before.alt} loading="lazy" decoding="async" />
-                  <img src={slide.after.src}  alt={slide.after.alt}  loading="lazy" decoding="async" />
-                </div>
-              </div>
+            <div class="gallery-slide">
+              <img
+                src={slide.src}
+                alt={slide.alt}
+                loading={i === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
             </div>
           ))}
         </div>
@@ -82,7 +71,6 @@ const slides = [
     margin-bottom: 2rem;
   }
 
-  /* Carousel shell */
   .gallery-carousel {
     display: flex;
     align-items: center;
@@ -95,52 +83,26 @@ const slides = [
   .slides-wrap {
     flex: 1;
     overflow: hidden;
+    min-width: 0;
   }
 
-  /* Track slides horizontally — translateX controls which is visible */
   .slides-track {
     display: flex;
+    width: 100%;
     transition: transform 0.4s ease;
   }
 
   .gallery-slide {
     flex: 0 0 100%;
-    width: 100%;
+    min-width: 0;
   }
 
-  .slide-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    height: 480px;
-  }
-
-  .slide-portrait {
-    overflow: hidden;
-  }
-  .slide-portrait img {
+  .gallery-slide img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
+    height: auto;
     display: block;
   }
 
-  .slide-before-after {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    overflow: hidden;
-  }
-  .slide-before-after img {
-    width: 100%;
-    flex: 1;
-    min-height: 0;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* Arrow buttons */
   .gallery-btn {
     background: var(--color-accent);
     border: none;
@@ -158,7 +120,6 @@ const slides = [
   }
   .gallery-btn:hover { background: var(--color-accent-hover); color: #fff; }
 
-  /* Caption */
   .gallery-caption {
     text-align: center;
     padding: 1.5rem 2rem 4rem;
@@ -173,9 +134,6 @@ const slides = [
   }
 
   @media (max-width: 700px) {
-    .slide-inner { grid-template-columns: 1fr; height: auto; }
-    .slide-portrait img { height: 300px; }
-    .slide-before-after img { height: 180px; flex: none; }
     .gallery-btn { width: 36px; font-size: 1.5rem; }
   }
 </style>
