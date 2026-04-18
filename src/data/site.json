@@ -40,21 +40,57 @@
       "text": "Services",
       "href": "/general-dentistry-services/",
       "children": [
-        { "text": "Dental Exams", "href": "/dental-exams/" },
-        { "text": "Dental Cleanings", "href": "/dental-cleanings/" },
-        { "text": "Dental Fillings", "href": "/dental-fillings/" },
-        { "text": "Dental Crowns", "href": "/dental-crowns/" },
-        { "text": "Dental Bridges", "href": "/dental-bridges/" },
-        { "text": "Dental Implants", "href": "/dental-implants/" },
-        { "text": "Veneers", "href": "/veneers/" },
-        { "text": "Teeth Whitening", "href": "/teeth-whitening/" },
-        { "text": "Clear Aligners", "href": "/clear-aligners/" },
-        { "text": "Invisalign", "href": "/invisalign/" },
-        { "text": "Root Canal Therapy", "href": "/root-canal-therapy/" },
-        { "text": "Tooth Extractions", "href": "/tooth-extractions/" },
-        { "text": "Dentures", "href": "/dentures/" },
-        { "text": "Gum Disease Treatment", "href": "/gum-disease-treatment/" },
-        { "text": "Mouth Guards", "href": "/mouth-guards/" }
+        {
+          "text": "General",
+          "href": "/general-dentistry-services/",
+          "children": [
+            { "text": "Dental Checkups", "href": "/dental-checkup-focused/" },
+            { "text": "Cavity Treatment", "href": "/dental-cavities-solutions/" },
+            { "text": "Fillings", "href": "/dental-fillings/" },
+            { "text": "Gingivitis Treatment", "href": "/dental-gingivitis-prevention/" },
+            { "text": "Tooth Extractions", "href": "/tooth-extractions/" }
+          ]
+        },
+        {
+          "text": "Cosmetic",
+          "href": "/cosmetic-dentistry-focused/",
+          "children": [
+            { "text": "Cosmetic & Restorative Options", "href": "/cosmetic-restorative/" },
+            { "text": "Clear Aligners", "href": "/clear-aligners-focused/" },
+            { "text": "Gum Lifts", "href": "/gum-lifts/" },
+            { "text": "Removable Dental Appliances", "href": "/removable-dental-appliances/" },
+            { "text": "Teeth Whitening", "href": "/teeth-whitening/" },
+            { "text": "Veneers", "href": "/veneers/" }
+          ]
+        },
+        {
+          "text": "Family Dentistry",
+          "href": "/family-dentistry-focused/",
+          "children": [
+            { "text": "Pediatric Dentist", "href": "/pediatric-dentist-questions/" },
+            { "text": "What is a Family Dentist?", "href": "/family-dentist/" }
+          ]
+        },
+        { "text": "Emergency", "href": "/emergency-dental-information/" },
+        {
+          "text": "Preventative",
+          "href": "/preventative/",
+          "children": [
+            { "text": "Mouth Guards", "href": "/mouth-guards/" }
+          ]
+        },
+        {
+          "text": "Restorative",
+          "href": "/dental-crowns-focused/",
+          "children": [
+            { "text": "Dental Crowns", "href": "/dental-crowns-focused/" },
+            { "text": "Dental Bridges", "href": "/dental-bridges/" },
+            { "text": "Dental Implants", "href": "/dental-implants/" },
+            { "text": "Dentures", "href": "/dentures/" },
+            { "text": "Gum Disease Treatment", "href": "/gum-disease-treatment/" },
+            { "text": "Root Canal Therapy", "href": "/root-canal-therapy/" }
+          ]
+        }
       ]
     },
     { "text": "Review Us", "href": "/review-us/", "children": [] },
