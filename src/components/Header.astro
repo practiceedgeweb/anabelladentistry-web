@@ -53,7 +53,16 @@ const { contact, nav, zocDocUrl } = site;
             {item.children && item.children.length > 0 && (
               <ul class="dropdown">
                 {item.children.map((child) => (
-                  <li><a href={child.href}>{child.text}</a></li>
+                  <li class={child.children && child.children.length > 0 ? 'has-fly' : ''}>
+                    <a href={child.href}>{child.text}</a>
+                    {child.children && child.children.length > 0 && (
+                      <ul class="flyout">
+                        {child.children.map((grandchild) => (
+                          <li><a href={grandchild.href}>{grandchild.text}</a></li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
                 ))}
               </ul>
             )}
@@ -179,6 +188,40 @@ const { contact, nav, zocDocUrl } = site;
   }
   .dropdown li a:hover { background: rgba(0,0,0,0.08); color: var(--color-accent-hover); }
 
+  /* ── Third-level fly-out ── */
+  .has-fly { position: relative; }
+  .has-fly > a::after { content: ' ›'; opacity: 0.6; }
+  .flyout {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: var(--color-accent);
+    min-width: 220px;
+    list-style: none;
+    padding: 0.4rem 0;
+    box-shadow: 6px 6px 20px rgba(0,0,0,0.12);
+    border-top: 2px solid var(--color-accent-hover);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(4px);
+    transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
+  }
+  .has-fly:hover > .flyout,
+  .has-fly:focus-within > .flyout {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .flyout li a {
+    display: block;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    white-space: nowrap;
+  }
+  .flyout li a:hover { background: rgba(0,0,0,0.08); color: var(--color-accent-hover); }
+
   /* ── Mobile hamburger ── */
   .nav-toggle-input { display: none; }
   .hamburger {
@@ -220,5 +263,15 @@ const { contact, nav, zocDocUrl } = site;
       padding-left: 1rem;
     }
     .has-drop:hover > .dropdown { display: block; }
+    .flyout {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      border-top: none;
+      padding-left: 1rem;
+    }
+    .has-fly > a::after { content: ''; }
   }
 </style>

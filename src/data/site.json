@@ -21,7 +21,17 @@
         { "text": "Schedule Appointment", "href": "/schedule/" },
         { "text": "Insurance", "href": "/dental-insurance-accepted/" },
         { "text": "Patient Information", "href": "/patient-information/" },
-        { "text": "FAQs & Information", "href": "/pediatric-dentist-questions/" }
+        { "text": "FAQs & Information", "href": "/pediatric-dentist-questions/", "children": [
+          { "text": "Dental Implant Benefits", "href": "/dental-implant-benefits/" },
+          { "text": "Dentures Cleaning & Care", "href": "/dentures-cleaning-and-care/" },
+          { "text": "How to Brush Your Teeth", "href": "/how-to-brush-your-teeth/" },
+          { "text": "How to Brush Teeth with Braces", "href": "/how-to-brush-teeth-with-braces/" },
+          { "text": "How to Floss Your Teeth", "href": "/how-to-floss-your-teeth/" },
+          { "text": "Importance of Baby Teeth", "href": "/importance-of-baby-teeth/" },
+          { "text": "Root Canal Symptoms", "href": "/root-canal-symptoms/" },
+          { "text": "Root Canal Recovery", "href": "/root-canal-recovery/" },
+          { "text": "Symptoms of Gum Disease", "href": "/gum-disease-symptoms/" }
+        ] }
       ]
     },
     { "text": "Sleep Apnea", "href": "/sleep-apnea/", "children": [] },
