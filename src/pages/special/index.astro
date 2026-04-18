@@ -12,53 +12,46 @@ import site from '../../data/site.json';
   <Header />
 
   <!-- ── Hero ── -->
-  <section class="special-hero">
-    <div class="container special-hero-inner">
-      <p class="special-prefix">NEW PATIENT SPECIAL OFFER</p>
-      <h1>Complimentary Consultation for Clear Aligners, Cosmetic Dentistry, Implants, TMJ Pain, or Sleep Apnea</h1>
-    </div>
-    <div class="special-wave" aria-hidden="true">
-      <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,30 C300,60 900,0 1200,30 L1200,60 L0,60 Z" fill="#ffffff"/>
-      </svg>
+  <section class="sp-hero">
+    <div class="container sp-hero-inner">
+      <p class="sp-prefix">NEW PATIENT SPECIAL OFFER</p>
+      <h1>Complimentary Consultation For Clear Aligners, Cosmetic Dentistry, Implants, TMJ Pain, Or Sleep Apnea</h1>
     </div>
   </section>
+  <!-- downward triangle -->
+  <div class="sp-arrow-down" aria-hidden="true"></div>
 
   <!-- ── Content + Form ── -->
-  <section class="special-body">
-    <div class="container special-grid">
+  <section class="sp-body">
+    <div class="container sp-grid">
 
-      <div class="special-text">
+      <div class="sp-text">
         <p>If you're seeking a natural approach to restoring your oral health and improving your quality of life, now is the perfect time to take advantage of our <strong>exclusive offer!</strong></p>
         <p>Our skilled dentists adopt a "whole mouth" philosophy, working collaboratively with you to understand your specific dental needs. Together, we'll create a personalized care plan that supports your journey toward optimal oral health and a confident smile.</p>
-        <p>We also offer a unique, comprehensive and custom-to-you dental program that will help you achieve your smile goals. Don't just take our word for it — explore our <a href="/testimonials/" class="text-link">patient testimonials</a> to see the impact we've made in others' lives.</p>
+        <p>We also offer a unique, comprehensive and custom-to-you dental program that will help you achieve your smile goals. Don't just take our word for it—explore our <a href="/testimonials/" class="sp-link">patient testimonials</a> to see the impact we've made in others' lives.</p>
         <p><strong>Book Your Appointment Today!</strong> Discover the Unique Benefits of Our Dental Care!</p>
       </div>
 
-      <div class="special-form-col">
+      <div class="sp-form-col">
         <p>Simply fill out the form below, and we'll be in touch soon to get you started.</p>
 
-        <a href={site.zocDocUrl} class="btn-primary btn-zocdoc" target="_blank" rel="noopener noreferrer">
+        <a href={site.zocDocUrl} class="sp-btn sp-btn-schedule" target="_blank" rel="noopener noreferrer">
           Or Schedule Online Now
         </a>
 
-        <form class="special-form" id="special-form" novalidate>
-          <div class="form-group">
-            <label for="name">Full Name <span aria-hidden="true">*</span></label>
-            <input type="text" id="name" name="name" placeholder="Full Name" required autocomplete="name" />
+        <form class="sp-form" id="special-form" novalidate>
+          <div class="sp-field">
+            <input type="text" id="name" name="name" placeholder="Full Name*" required autocomplete="name" />
           </div>
-          <div class="form-group">
-            <label for="email">Email <span aria-hidden="true">*</span></label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email" />
+          <div class="sp-field">
+            <input type="email" id="email" name="email" placeholder="Your Email*" required autocomplete="email" />
           </div>
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" autocomplete="tel" />
+          <div class="sp-field">
+            <input type="tel" id="phone" name="phone" placeholder="Your Cell Phone*" autocomplete="tel" />
           </div>
-          <div class="form-group">
-            <label for="service">I'm Interested In</label>
+          <div class="sp-field">
             <select id="service" name="service">
-              <option value="">Select a service…</option>
+              <option value="" disabled selected>Choose a Service</option>
               <option value="Clear Aligners">Clear Aligners</option>
               <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
               <option value="Dental Implants">Dental Implants</option>
@@ -67,18 +60,23 @@ import site from '../../data/site.json';
               <option value="Other">Other</option>
             </select>
           </div>
-          <button type="submit" class="btn-primary btn-submit" id="submit-btn">SUBMIT</button>
-          <p class="form-status" id="form-status" aria-live="polite"></p>
+          <div class="sp-field">
+            <textarea id="message" name="message" placeholder="How Can We Help?"></textarea>
+          </div>
+          <button type="submit" class="sp-btn sp-btn-submit" id="submit-btn">SUBMIT</button>
+          <p class="sp-status" id="form-status" aria-live="polite"></p>
         </form>
       </div>
 
     </div>
   </section>
 
+  <!-- upward triangle -->
+  <div class="sp-arrow-up" aria-hidden="true"></div>
   <!-- ── Bottom CTA ── -->
-  <section class="special-cta">
-    <div class="container special-cta-inner">
-      <p class="cta-pre">Don't Wait Another Day</p>
+  <section class="sp-cta">
+    <div class="container sp-cta-inner">
+      <p class="sp-cta-pre">Don't Wait Another Day</p>
       <h2>SCHEDULE YOUR APPOINTMENT TODAY!</h2>
     </div>
   </section>
@@ -96,7 +94,7 @@ import site from '../../data/site.json';
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
     status.textContent = '';
-    status.className = 'form-status';
+    status.className = 'sp-status';
 
     try {
       const res = await fetch('/api/special', {
@@ -108,14 +106,14 @@ import site from '../../data/site.json';
       if (res.ok) {
         form.reset();
         status.textContent = 'Thank you! We will be in touch soon to get you started.';
-        status.className = 'form-status success';
+        status.className = 'sp-status success';
       } else {
         status.textContent = json.error ?? 'Something went wrong. Please try again.';
-        status.className = 'form-status error';
+        status.className = 'sp-status error';
       }
     } catch {
       status.textContent = 'Network error. Please check your connection and try again.';
-      status.className = 'form-status error';
+      status.className = 'sp-status error';
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = 'SUBMIT';
@@ -124,149 +122,186 @@ import site from '../../data/site.json';
 </script>
 
 <style>
+  /* ── Shared token ── */
+  :root {
+    --sp-bg: #a1c8aa;
+    --sp-btn: #83b78f;
+    --sp-text-on-bg: #f7f7f7;
+  }
+
   /* ── Hero ── */
-  .special-hero {
-    background: var(--color-accent);
-    padding: 4rem 0 0;
-    position: relative;
+  .sp-hero {
+    background: var(--sp-bg);
+    padding: 3.5rem 0 2.5rem;
     text-align: center;
   }
-  .special-hero-inner {
-    padding-bottom: 2rem;
-  }
-  .special-prefix {
+  .sp-prefix {
     font-family: var(--font-heading);
-    font-size: 0.75rem;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
     font-weight: 700;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: var(--color-accent-hover);
-    margin-bottom: 1rem;
+    color: var(--sp-text-on-bg);
+    margin-bottom: 0.75rem;
     display: block;
   }
-  .special-hero h1 {
+  .sp-hero h1 {
     font-family: var(--font-heading);
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    font-weight: 700;
-    color: var(--color-text-main);
-    max-width: 780px;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    font-weight: 400;
+    color: var(--sp-text-on-bg);
+    max-width: 680px;
     margin: 0 auto;
-    line-height: 1.3;
+    line-height: 1.5;
+    text-transform: capitalize;
   }
-  .special-wave {
-    line-height: 0;
+
+  /* ── Triangle arrows ── */
+  .sp-arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 55px solid transparent;
+    border-right: 55px solid transparent;
+    border-top: 38px solid var(--sp-bg);
+    margin: 0 auto;
   }
-  .special-wave svg {
-    display: block;
-    width: 100%;
-    height: 50px;
+  .sp-arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 55px solid transparent;
+    border-right: 55px solid transparent;
+    border-bottom: 38px solid var(--sp-bg);
+    margin: 0 auto;
   }
 
   /* ── Body ── */
-  .special-body {
-    padding: 3rem 0 4rem;
+  .sp-body {
+    padding: 3rem 0;
     background: #fff;
   }
-  .special-grid {
+  .sp-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: start;
   }
-  .special-text p {
+  .sp-text p {
     margin-bottom: 1rem;
     line-height: 1.75;
+    color: var(--color-text-main);
   }
-  .special-text a {
+  .sp-link {
     color: var(--color-accent-hover);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
 
   /* ── Form column ── */
-  .special-form-col > p {
+  .sp-form-col > p {
     margin-bottom: 1rem;
     line-height: 1.75;
+    color: var(--color-text-main);
   }
-  .btn-zocdoc {
+
+  /* ── Buttons ── */
+  .sp-btn {
     display: block;
+    width: 100%;
     text-align: center;
-    margin-bottom: 1.5rem;
-  }
-  .special-form .form-group {
-    margin-bottom: 1rem;
-  }
-  .special-form label {
-    display: block;
-    font-weight: 600;
-    font-size: 0.875rem;
-    margin-bottom: 0.4rem;
-    color: var(--color-text-main);
-  }
-  .special-form input,
-  .special-form select {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    background: #F7FAFC;
-    border: 1px solid #dde3e8;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 0.9375rem;
-    color: var(--color-text-main);
-    transition: border-color 0.2s;
-    box-sizing: border-box;
-  }
-  .special-form input:focus,
-  .special-form select:focus {
-    outline: none;
-    border-color: var(--color-accent-hover);
-  }
-  .btn-submit {
-    width: 100%;
+    background: var(--sp-btn);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.85rem 1rem;
+    border-radius: 3px;
     border: none;
     cursor: pointer;
-    font-family: var(--font-heading);
+    transition: background 0.2s;
+    box-sizing: border-box;
+    text-decoration: none;
   }
-  .form-status {
-    margin-top: 0.75rem;
-    font-weight: 600;
+  .sp-btn:hover { background: #6fa87b; }
+  .sp-btn-schedule { margin-bottom: 1.25rem; }
+  .sp-btn-submit { margin-top: 0.5rem; }
+
+  /* ── Form fields ── */
+  .sp-form { display: flex; flex-direction: column; gap: 0; }
+  .sp-field { margin-bottom: 0.6rem; }
+  .sp-field input,
+  .sp-field select,
+  .sp-field textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: inherit;
     font-size: 0.9rem;
+    color: var(--color-text-main);
+    box-sizing: border-box;
+    transition: border-color 0.2s;
   }
-  .form-status.success { color: #2d7a3a; }
-  .form-status.error { color: #c0392b; }
+  .sp-field input:focus,
+  .sp-field select:focus,
+  .sp-field textarea:focus {
+    outline: none;
+    border-color: var(--sp-btn);
+  }
+  .sp-field select { appearance: auto; }
+  .sp-field textarea { resize: vertical; min-height: 80px; }
+  .sp-field input::placeholder,
+  .sp-field textarea::placeholder { color: #999; }
+
+  /* ── Status ── */
+  .sp-status { margin-top: 0.75rem; font-weight: 600; font-size: 0.9rem; }
+  .sp-status.success { color: #2d7a3a; }
+  .sp-status.error { color: #c0392b; }
 
   /* ── Bottom CTA ── */
-  .special-cta {
-    background: var(--color-accent);
-    padding: 3rem 0;
+  .sp-cta {
+    background: var(--sp-bg);
+    padding: 2.5rem 0;
     text-align: center;
   }
-  .special-cta-inner {
+  .sp-cta-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
-  .cta-pre {
+  .sp-cta-pre {
     font-family: var(--font-heading);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--color-accent-hover);
+    color: var(--sp-text-on-bg);
+    opacity: 0.9;
   }
-  .special-cta h2 {
+  .sp-cta h2 {
     font-family: var(--font-heading);
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-size: clamp(1.2rem, 3vw, 1.9rem);
     font-weight: 700;
-    color: var(--color-text-main);
+    color: var(--sp-text-on-bg);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
   }
 
   /* ── Responsive ── */
   @media (max-width: 768px) {
-    .special-grid {
+    .sp-grid {
       grid-template-columns: 1fr;
       gap: 2rem;
+    }
+    .sp-arrow-down,
+    .sp-arrow-up {
+      border-left-width: 40px;
+      border-right-width: 40px;
+      border-top-width: 28px;
+      border-bottom-width: 28px;
     }
   }
 </style>
