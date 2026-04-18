@@ -3,20 +3,270 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import Sidebar from '../../components/Sidebar.astro';
+import site from '../../data/site.json';
 ---
 
 <Layout title={"New Patient Special - AnaBella Family and Cosmetic Dentistry"} description={"Take advantage of our new patient special offer for the best dental care in Bellevue WA at AnaBella Family and Cosmetic Dentistry today."} canonical={"https://www.anabelladentistry.com/special/"} ogImage={""}>
 <script type="application/ld+json" set:html={"{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/special\\/\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/special\\/\",\"name\":\"New Patient Special - AnaBella Family and Cosmetic Dentistry\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\"},\"datePublished\":\"2026-02-09T16:29:52+00:00\",\"dateModified\":\"2026-02-09T19:51:44+00:00\",\"description\":\"Take advantage of our new patient special offer for the best dental care in Bellevue WA at AnaBella Family and Cosmetic Dentistry today.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/special\\/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/www.anabelladentistry.com\\/special\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/special\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.anabelladentistry.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Special Offer\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.anabelladentistry.com\\/#website\",\"url\":\"https:\\/\\/www.anabelladentistry.com\\/\",\"name\":\"AnaBella Family and Cosmetic Dentistry\",\"description\":\"Dentist in Bellevue WA\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.anabelladentistry.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"}]}"}></script>
+
   <Header />
-  <main class="interior-page">
-    <div class="container interior-grid">
-      <div class="interior-content">
-    <h1>{`NEW PATIENT SPECIAL OFFER`}</h1>
-    <p>{`Complimentary Consultation for Clear Aligners, Cosmetic Dentistry, Implants, TMJ Pain, or Sleep Apnea`}</p>
-      </div>
-      <Sidebar />
+
+  <!-- ── Hero ── -->
+  <section class="special-hero">
+    <div class="container special-hero-inner">
+      <p class="special-prefix">NEW PATIENT SPECIAL OFFER</p>
+      <h1>Complimentary Consultation for Clear Aligners, Cosmetic Dentistry, Implants, TMJ Pain, or Sleep Apnea</h1>
     </div>
-  </main>
+    <div class="special-wave" aria-hidden="true">
+      <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C300,60 900,0 1200,30 L1200,60 L0,60 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ── Content + Form ── -->
+  <section class="special-body">
+    <div class="container special-grid">
+
+      <div class="special-text">
+        <p>If you're seeking a natural approach to restoring your oral health and improving your quality of life, now is the perfect time to take advantage of our <strong>exclusive offer!</strong></p>
+        <p>Our skilled dentists adopt a "whole mouth" philosophy, working collaboratively with you to understand your specific dental needs. Together, we'll create a personalized care plan that supports your journey toward optimal oral health and a confident smile.</p>
+        <p>We also offer a unique, comprehensive and custom-to-you dental program that will help you achieve your smile goals. Don't just take our word for it — explore our <a href="/testimonials/" class="text-link">patient testimonials</a> to see the impact we've made in others' lives.</p>
+        <p><strong>Book Your Appointment Today!</strong> Discover the Unique Benefits of Our Dental Care!</p>
+      </div>
+
+      <div class="special-form-col">
+        <p>Simply fill out the form below, and we'll be in touch soon to get you started.</p>
+
+        <a href={site.zocDocUrl} class="btn-primary btn-zocdoc" target="_blank" rel="noopener noreferrer">
+          Or Schedule Online Now
+        </a>
+
+        <form class="special-form" id="special-form" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Full Name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" autocomplete="tel" />
+          </div>
+          <div class="form-group">
+            <label for="service">I'm Interested In</label>
+            <select id="service" name="service">
+              <option value="">Select a service…</option>
+              <option value="Clear Aligners">Clear Aligners</option>
+              <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
+              <option value="Dental Implants">Dental Implants</option>
+              <option value="TMJ Pain">TMJ Pain</option>
+              <option value="Sleep Apnea">Sleep Apnea</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary btn-submit" id="submit-btn">SUBMIT</button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Bottom CTA ── -->
+  <section class="special-cta">
+    <div class="container special-cta-inner">
+      <p class="cta-pre">Don't Wait Another Day</p>
+      <h2>SCHEDULE YOUR APPOINTMENT TODAY!</h2>
+    </div>
+  </section>
+
   <Footer />
 </Layout>
+
+<script>
+  const form = document.getElementById('special-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const status = document.getElementById('form-status') as HTMLParagraphElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    status.textContent = '';
+    status.className = 'form-status';
+
+    try {
+      const res = await fetch('/api/special', {
+        method: 'POST',
+        body: new FormData(form),
+      });
+      const json = await res.json();
+
+      if (res.ok) {
+        form.reset();
+        status.textContent = 'Thank you! We will be in touch soon to get you started.';
+        status.className = 'form-status success';
+      } else {
+        status.textContent = json.error ?? 'Something went wrong. Please try again.';
+        status.className = 'form-status error';
+      }
+    } catch {
+      status.textContent = 'Network error. Please check your connection and try again.';
+      status.className = 'form-status error';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'SUBMIT';
+    }
+  });
+</script>
+
+<style>
+  /* ── Hero ── */
+  .special-hero {
+    background: var(--color-accent);
+    padding: 4rem 0 0;
+    position: relative;
+    text-align: center;
+  }
+  .special-hero-inner {
+    padding-bottom: 2rem;
+  }
+  .special-prefix {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent-hover);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .special-hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--color-text-main);
+    max-width: 780px;
+    margin: 0 auto;
+    line-height: 1.3;
+  }
+  .special-wave {
+    line-height: 0;
+  }
+  .special-wave svg {
+    display: block;
+    width: 100%;
+    height: 50px;
+  }
+
+  /* ── Body ── */
+  .special-body {
+    padding: 3rem 0 4rem;
+    background: #fff;
+  }
+  .special-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .special-text p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+  }
+  .special-text a {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* ── Form column ── */
+  .special-form-col > p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+  }
+  .btn-zocdoc {
+    display: block;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .special-form .form-group {
+    margin-bottom: 1rem;
+  }
+  .special-form label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.4rem;
+    color: var(--color-text-main);
+  }
+  .special-form input,
+  .special-form select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #F7FAFC;
+    border: 1px solid #dde3e8;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    color: var(--color-text-main);
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+  }
+  .special-form input:focus,
+  .special-form select:focus {
+    outline: none;
+    border-color: var(--color-accent-hover);
+  }
+  .btn-submit {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-heading);
+  }
+  .form-status {
+    margin-top: 0.75rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .form-status.success { color: #2d7a3a; }
+  .form-status.error { color: #c0392b; }
+
+  /* ── Bottom CTA ── */
+  .special-cta {
+    background: var(--color-accent);
+    padding: 3rem 0;
+    text-align: center;
+  }
+  .special-cta-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .cta-pre {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent-hover);
+  }
+  .special-cta h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 700;
+    color: var(--color-text-main);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .special-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>
