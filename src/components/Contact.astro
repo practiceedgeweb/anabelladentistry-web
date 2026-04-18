@@ -5,11 +5,13 @@ const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 const weekend = ['Saturday', 'Sunday'];
 
 const PLACE_ID = 'ChIJGWCelPJskFQRPyUauOk4Iac';
-const PLACES_KEY = import.meta.env.GOOGLE_PLACES_API_KEY;
+// process.env works reliably at Astro build time; import.meta.env can be swallowed by Vite
+const PLACES_KEY = process.env.GOOGLE_PLACES_API_KEY ?? import.meta.env.GOOGLE_PLACES_API_KEY;
 
 // Fallback to values in site.json if API key not configured
 let reviewRating: number = contact.googleReview.rating;
 let reviewCount: number = contact.googleReview.count;
+let debugInfo = `key_present:${!!PLACES_KEY}`;
 
 if (PLACES_KEY) {
   try {
@@ -17,22 +19,21 @@ if (PLACES_KEY) {
       `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=rating,user_ratings_total&key=${PLACES_KEY}`
     );
     const data = await res.json();
-    console.log('[Places API] status:', data.status, '| rating:', data.result?.rating, '| count:', data.result?.user_ratings_total);
+    debugInfo += ` | status:${data.status} | rating:${data.result?.rating} | count:${data.result?.user_ratings_total}`;
     if (data.result?.rating) {
       reviewRating = data.result.rating;
       reviewCount = data.result.user_ratings_total;
     }
   } catch (err) {
-    console.error('[Places API] fetch failed:', err);
+    debugInfo += ` | fetch_error:${err}`;
   }
-} else {
-  console.log('[Places API] GOOGLE_PLACES_API_KEY not set — using fallback values');
 }
 
 const fullStars = Math.floor(reviewRating);
 const hasHalf = reviewRating - fullStars >= 0.5;
 const reviewUrl = contact.googleReview.url;
 ---
+<div id="places-api-debug" style="display:none">{debugInfo}</div>
 <section id="contact" class="contact section">
   <div class="contact-grid">
     <!-- Map -->

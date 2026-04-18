@@ -3,6 +3,31 @@ import site from '../data/site.json';
 const { contact, hours } = site;
 const allDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
+const PLACE_ID = 'ChIJGWCelPJskFQRPyUauOk4Iac';
+const PLACES_KEY = process.env.GOOGLE_PLACES_API_KEY ?? import.meta.env.GOOGLE_PLACES_API_KEY;
+
+let reviewRating: number = contact.googleReview.rating;
+let reviewCount: number = contact.googleReview.count;
+
+if (PLACES_KEY) {
+  try {
+    const res = await fetch(
+      `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=rating,user_ratings_total&key=${PLACES_KEY}`
+    );
+    const data = await res.json();
+    if (data.result?.rating) {
+      reviewRating = data.result.rating;
+      reviewCount = data.result.user_ratings_total;
+    }
+  } catch {
+    // use fallback
+  }
+}
+
+const fullStars = Math.floor(reviewRating);
+const hasHalf = reviewRating - fullStars >= 0.5;
+const reviewUrl = contact.googleReview.url;
+
 const finalCta = {
   prefix: 'Ready to find out more?',
   title: 'New Patient Special Offer',
@@ -54,6 +79,24 @@ const finalCta = {
         {contact.address.street}<br />
         {contact.address.city}, {contact.address.state} {contact.address.zip}
       </address>
+
+      <a href={reviewUrl} class="review-row" target="_blank" rel="noopener noreferrer" aria-label={`${reviewRating} out of 5 stars — ${reviewCount} Google reviews`}>
+        <span class="review-stars" aria-hidden="true">
+          {Array.from({ length: fullStars }).map(() => (
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="#f5a623"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
+          ))}
+          {hasHalf && (
+            <svg viewBox="0 0 20 20" width="16" height="16"><defs><linearGradient id="half-f"><stop offset="50%" stop-color="#f5a623"/><stop offset="50%" stop-color="#ddd"/></linearGradient></defs><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7" fill="url(#half-f)"/></svg>
+          )}
+          {Array.from({ length: 5 - fullStars - (hasHalf ? 1 : 0) }).map(() => (
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="#ddd"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
+          ))}
+        </span>
+        <span class="review-meta">
+          <strong>{reviewRating}</strong> · {reviewCount} Google reviews
+        </span>
+      </a>
+
       <a href={`tel:${contact.phoneTel}`} class="contact-phone">{contact.phone}</a>
       <div class="contact-actions">
         <a href={site.zocDocUrl} class="btn-primary" target="_blank" rel="noopener noreferrer">Book Online</a>
@@ -206,6 +249,18 @@ const finalCta = {
     font-size: 0.9rem;
     line-height: 1.7;
   }
+  .review-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    margin-top: 0.1rem;
+  }
+  .review-row:hover .review-meta { color: var(--color-accent-hover); }
+  .review-stars { display: flex; align-items: center; gap: 1px; }
+  .review-meta { font-size: 0.82rem; color: var(--color-text-muted); transition: color 0.2s; }
+  .review-meta strong { color: var(--color-text-main); font-weight: 700; }
+
   .contact-phone {
     font-family: var(--font-heading);
     font-size: 1.5rem;
