@@ -17,13 +17,16 @@ if (PLACES_KEY) {
       `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=rating,user_ratings_total&key=${PLACES_KEY}`
     );
     const data = await res.json();
+    console.log('[Places API] status:', data.status, '| rating:', data.result?.rating, '| count:', data.result?.user_ratings_total);
     if (data.result?.rating) {
       reviewRating = data.result.rating;
       reviewCount = data.result.user_ratings_total;
     }
-  } catch {
-    // network error — use fallback values
+  } catch (err) {
+    console.error('[Places API] fetch failed:', err);
   }
+} else {
+  console.log('[Places API] GOOGLE_PLACES_API_KEY not set — using fallback values');
 }
 
 const fullStars = Math.floor(reviewRating);
