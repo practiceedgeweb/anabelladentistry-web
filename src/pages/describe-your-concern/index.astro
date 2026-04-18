@@ -13,12 +13,66 @@ import Sidebar from '../../components/Sidebar.astro';
   <main class="interior-page">
     <div class="container interior-grid">
       <div class="interior-content">
-    <h1>{`Describe Your Concern`}</h1>
-    <img class="page-hero-img" src="http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/misc-dentist-cleaning-teeth.jpg" alt="" loading="lazy" decoding="async" />
-    <p>{`At AnaBella Family and Cosmetic Dentistry in Bellevue WA, we are committed to creating smiles from the inside out. Please let us know what we could have done to improve your experience in our office by filling out the form below.`}</p>
+        <h1>Describe Your Concern</h1>
+        <img class="page-hero-img" src="http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/misc-dentist-cleaning-teeth.jpg" alt="Dentist Cleaning Teeth" loading="eager" decoding="async" onerror="this.onerror=null;this.src='http://www.dental.inceptionimages.com/wp-content/uploads/2017/01/misc-dentist-cleaning-teeth.jpg'" />
+        <p>At <a href="/" class="text-link">AnaBella Family and Cosmetic Dentistry</a> in Bellevue WA, we are committed to creating smiles from the inside out. Please let us know what we could have done to improve your experience in our office by filling out the form below.</p>
+        <hr />
+        <form class="contact-form" id="concern-form" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Full Name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="concern">What Caused Your Experience To Be Unpleasant?</label>
+            <textarea id="concern" name="concern" placeholder="Please describe your concern..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" id="submit-btn">SUBMIT</button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
       </div>
       <Sidebar />
     </div>
   </main>
   <Footer />
 </Layout>
+
+<script>
+  const form = document.getElementById('concern-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const status = document.getElementById('form-status') as HTMLParagraphElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    status.textContent = '';
+    status.className = 'form-status';
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body: new FormData(form),
+      });
+      const json = await res.json();
+
+      if (res.ok) {
+        form.reset();
+        status.textContent = 'Thank you for taking the time to complete this form. We will be in touch soon.';
+        status.className = 'form-status success';
+      } else {
+        status.textContent = json.error ?? 'Something went wrong. Please try again.';
+        status.className = 'form-status error';
+      }
+    } catch {
+      status.textContent = 'Network error. Please check your connection and try again.';
+      status.className = 'form-status error';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'SUBMIT';
+    }
+  });
+</script>
