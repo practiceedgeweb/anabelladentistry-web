@@ -184,6 +184,10 @@ a { color: inherit; text-decoration: none; }
 .contact-form .form-status.success { color: #2d7a3a; }
 .contact-form .form-status.error { color: #c0392b; }
 
+/* Google Maps embed */
+.map-embed { margin: 1.5rem 0; border-radius: 6px; overflow: hidden; }
+.map-embed iframe { display: block; width: 100%; height: 350px; border: 0; }
+
 /* BeaverBuilder Advanced Accordion → <details>/<summary> */
 .faq-accordion {
   margin: 1.5rem 0;

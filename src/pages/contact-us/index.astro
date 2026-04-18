@@ -12,12 +12,78 @@ import Sidebar from '../../components/Sidebar.astro';
   <main class="interior-page">
     <div class="container interior-grid">
       <div class="interior-content">
-    <h1>{`Contact Us`}</h1>
-    <h3>{`CALL US  (425) 454-3221`}</h3>
-    <p>{`Don't hesitate to ask us something. We look forward to hearing from you! Please fill out the form below, including all required fields, and we will contact you as soon as possible.`}</p>
+        <h1>Contact Us</h1>
+        <h3>CALL US &nbsp; <a href="tel:4254543221" class="text-link">(425) 454-3221</a></h3>
+        <p>Don't hesitate to ask us something. We look forward to hearing from you! Please fill out the form below, including all required fields, and we will contact you as soon as possible.</p>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5378.169584659924!2d-122.19014100000001!3d47.624483!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906cf2949e6019%3A0xa72138e9b81a253f!2sAnaBella%20Family%20and%20Cosmetic%20Dentistry!5e0!3m2!1sen!2sus!4v1760463607075!5m2!1sen!2sus"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="AnaBella Family and Cosmetic Dentistry location map"
+          ></iframe>
+        </div>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Full Name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" autocomplete="tel" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="How can we help you?"></textarea>
+          </div>
+          <button type="submit" class="btn-primary" id="submit-btn">SUBMIT</button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
       </div>
       <Sidebar />
     </div>
   </main>
   <Footer />
 </Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const status = document.getElementById('form-status') as HTMLParagraphElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    status.textContent = '';
+    status.className = 'form-status';
+
+    try {
+      const res = await fetch('/api/contact-us', {
+        method: 'POST',
+        body: new FormData(form),
+      });
+      const json = await res.json();
+
+      if (res.ok) {
+        form.reset();
+        status.textContent = 'Thank you for contacting us! We will get back to you as soon as possible.';
+        status.className = 'form-status success';
+      } else {
+        status.textContent = json.error ?? 'Something went wrong. Please try again.';
+        status.className = 'form-status error';
+      }
+    } catch {
+      status.textContent = 'Network error. Please check your connection and try again.';
+      status.className = 'form-status error';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'SUBMIT';
+    }
+  });
+</script>
