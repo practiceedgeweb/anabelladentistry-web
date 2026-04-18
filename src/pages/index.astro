@@ -29,7 +29,10 @@ import site from '../data/site.json';
             src={`/assets/2025/10/${home.hero.image.src.split('/').pop()}`}
             onerror={`this.onerror=null;this.src='${home.hero.image.src}';`}
             alt={home.hero.image.alt}
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
+            width="420"
+            height="500"
             decoding="async"
           />
         </div>
@@ -91,7 +94,7 @@ import site from '../data/site.json';
           <span class="bio-kicker">TMJ Therapy</span>
           <h2>Relief From Jaw Pain &amp; Headaches</h2>
           <p>{home.tmj.body}</p>
-          <a href={home.tmj.cta.href} class="btn-meet">LEARN MORE</a>
+          <a href={home.tmj.cta.href} class="btn-meet">LEARN MORE ABOUT TMJ TREATMENT</a>
         </div>
       </div>
     </section>
@@ -134,7 +137,7 @@ import site from '../data/site.json';
     font-weight: 700;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--color-accent-hover);
+    color: var(--color-text-main);
   }
   .bio-card h2 {
     font-family: var(--font-heading);
@@ -153,7 +156,7 @@ import site from '../data/site.json';
     display: inline-block;
     align-self: flex-start;
     background: var(--color-accent-hover);
-    color: #fff;
+    color: #333333;
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 0.8rem;
