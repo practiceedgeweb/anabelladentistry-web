@@ -152,6 +152,62 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 1.75rem;
   border-radius: 0;
 }
+.text-link {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.text-link:hover { color: var(--color-text-main); }
+
+/* BeaverBuilder Advanced Accordion → <details>/<summary> */
+.faq-accordion {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.faq-accordion details {
+  border: 1px solid var(--color-accent);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.faq-accordion summary {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1rem;
+  background: var(--color-accent);
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #2a2a2a;
+  user-select: none;
+}
+.faq-accordion summary::-webkit-details-marker { display: none; }
+.faq-accordion summary::before {
+  content: '›';
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #2a2a2a;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  display: inline-block;
+}
+.faq-accordion details[open] > summary {
+  background: #4a4a4a;
+  color: #fff;
+}
+.faq-accordion details[open] > summary::before {
+  color: #fff;
+  transform: rotate(90deg);
+}
+.faq-accordion .faq-body {
+  padding: 1rem 1rem 1rem 2.5rem;
+  background: #fff;
+}
+.faq-accordion .faq-body p { margin: 0; }
 
 @media (max-width: 900px) {
   .interior-grid { flex-direction: column; }
