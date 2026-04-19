@@ -9,6 +9,6 @@ export default defineConfig({
   adapter: vercel(),
   integrations: [sitemap()],
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'always',
   },
 });
