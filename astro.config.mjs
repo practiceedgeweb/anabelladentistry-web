@@ -8,4 +8,7 @@ export default defineConfig({
   output: 'static',
   adapter: vercel(),
   integrations: [sitemap()],
+  build: {
+    inlineStylesheets: 'auto',
+  },
 });
